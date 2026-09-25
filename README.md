@@ -139,11 +139,3 @@ AIPage is an academic research prototype. The AI prediction engine
 provides an experimental page-reuse prediction signal and does not
 replace the Linux kernel virtual-memory subsystem.
 
-## Team
-
-OSSP Team-8
-
-- Shrenika Reddy
-- Aswani Gayatri
-- A Pavan Reddy
-- Mohd Abdul Aiyaan
