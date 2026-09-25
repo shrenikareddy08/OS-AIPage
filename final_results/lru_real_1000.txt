@@ -1,0 +1,12 @@
+============================================================
+                 LRU REAL MEMORY BASELINE
+============================================================
+Trace       : final_results/real_pages_1000.txt
+Frames      : 4
+Accesses    : 1000
+Hits        : 58
+Page Faults : 942
+Replacements: 938
+Hit Rate    : 5.80%
+Fault Rate  : 94.20%
+============================================================

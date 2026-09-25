@@ -1,0 +1,32 @@
+============================================================
+AIPage FINAL SAME-TRACE REAL MEMORY COMPARISON
+============================================================
+
+Trace       : final_results/FINAL_TRACE_100.txt
+Accesses    : 100
+Frames      : 4
+
+------------------------------------------------------------
+Algorithm        Hits    Faults    Hit Rate    Fault Rate
+------------------------------------------------------------
+AIPage           17      83        17.00%      83.00%
+LRU               4      96         4.00%      96.00%
+FIFO              4      96         4.00%      96.00%
+------------------------------------------------------------
+
+AIPage Next-Page Prediction
+---------------------------
+Predictions      : 91
+Correct          : 58
+Accuracy         : 63.74%
+
+Improvement
+-----------
+AIPage vs LRU    : +13 percentage points
+AIPage vs FIFO   : +13 percentage points
+Relative gain    : 325%
+
+============================================================
+All three algorithms evaluated on the same 100-access
+real-memory trace.
+============================================================

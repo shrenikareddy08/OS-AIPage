@@ -1,0 +1,36 @@
+AIPage v2.1 FINAL EXPERIMENT SUMMARY
+====================================
+
+Workloads:
+- sequential
+- strided
+- random
+- locality
+
+Frame sizes:
+2, 3, 4, 5, 6, 8, 10
+
+Configurations:
+28
+
+Average Hit Rate:
+AIPage : 0.110564
+LRU    : 0.0901964
+FIFO   : 0.0903
+
+Relative improvement over LRU:
+22.58%
+
+Best configurations:
+AIPage : 16
+LRU    : 2
+FIFO   : 6
+Ties   : 4
+
+OPT:
+Used as offline oracle for victim-selection evaluation.
+
+Key observation:
+AIPage performs particularly well on structured workloads
+(sequential, strided and locality), while random workloads
+remain challenging.

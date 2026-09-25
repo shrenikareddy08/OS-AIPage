@@ -1,0 +1,1428 @@
+
+============================================================
+AIPage REAL-TIME INTELLIGENT PAGE REPLACEMENT ENGINE
+============================================================
+Frame Capacity   : 4
+Input            : REAL PROCESS MEMORY ACCESS STREAM
+Page IDs         : ACTUAL 64-BIT VIRTUAL PAGES
+Learning         : FREQUENCY + RECENCY + REUSE + TRANSITIONS
+Prediction       : NEXT REAL MEMORY PAGE
+Replacement      : AI-GUIDED
+Mode             : REAL-TIME
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #1
+============================================================
+Actual Real Page : 65157747024
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747024
+Resident Frames  : [ 65157747024 - - - ]
+Hit/Fault        : FAULT
+Victim Real Page : NONE
+Decision         : LOAD 65157747024
+Reason           : Free resident frame available
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #2
+============================================================
+Actual Real Page : 65157747025
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747024 65157747025
+Resident Frames  : [ 65157747024 65157747025 - - ]
+Hit/Fault        : FAULT
+Victim Real Page : NONE
+Decision         : LOAD 65157747025
+Reason           : Free resident frame available
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #3
+============================================================
+Actual Real Page : 65157747026
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747024 65157747025 65157747026
+Resident Frames  : [ 65157747024 65157747025 65157747026 - ]
+Hit/Fault        : FAULT
+Victim Real Page : NONE
+Decision         : LOAD 65157747026
+Reason           : Free resident frame available
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #4
+============================================================
+Actual Real Page : 65157747027
+Next Prediction  : 65157747028
+Confidence       : 50.0%
+Recent Pages     : 65157747024 65157747025 65157747026 65157747027
+Resident Frames  : [ 65157747024 65157747025 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : NONE
+Decision         : LOAD 65157747027
+Reason           : Free resident frame available
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #5
+============================================================
+Actual Real Page : 65157747028
+Next Prediction  : 65157747029
+Confidence       : 50.0%
+Recent Pages     : 65157747024 65157747025 65157747026 65157747027 65157747028
+Resident Frames  : [ 65157747028 65157747025 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747024
+Decision         : REPLACE 65157747024 -> 65157747028
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #6
+============================================================
+Actual Real Page : 65157747029
+Next Prediction  : 65157747030
+Confidence       : 50.0%
+Recent Pages     : 65157747024 65157747025 65157747026 65157747027 65157747028 65157747029
+Resident Frames  : [ 65157747028 65157747029 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747025
+Decision         : REPLACE 65157747025 -> 65157747029
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #7
+============================================================
+Actual Real Page : 65157747030
+Next Prediction  : 65157747031
+Confidence       : 50.0%
+Recent Pages     : 65157747024 65157747025 65157747026 65157747027 65157747028 65157747029 65157747030
+Resident Frames  : [ 65157747028 65157747029 65157747030 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747026
+Decision         : REPLACE 65157747026 -> 65157747030
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #8
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747032
+Confidence       : 50.0%
+Recent Pages     : 65157747024 65157747025 65157747026 65157747027 65157747028 65157747029 65157747030 65157747031
+Resident Frames  : [ 65157747028 65157747029 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747027
+Decision         : REPLACE 65157747027 -> 65157747031
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #9
+============================================================
+Actual Real Page : 65157747032
+Next Prediction  : 65157747033
+Confidence       : 50.0%
+Recent Pages     : 65157747025 65157747026 65157747027 65157747028 65157747029 65157747030 65157747031 65157747032
+Resident Frames  : [ 65157747032 65157747029 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747028
+Decision         : REPLACE 65157747028 -> 65157747032
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #10
+============================================================
+Actual Real Page : 65157747033
+Next Prediction  : 65157747034
+Confidence       : 50.0%
+Recent Pages     : 65157747026 65157747027 65157747028 65157747029 65157747030 65157747031 65157747032 65157747033
+Resident Frames  : [ 65157747032 65157747033 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747029
+Decision         : REPLACE 65157747029 -> 65157747033
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #11
+============================================================
+Actual Real Page : 65157747034
+Next Prediction  : 65157747035
+Confidence       : 50.0%
+Recent Pages     : 65157747027 65157747028 65157747029 65157747030 65157747031 65157747032 65157747033 65157747034
+Resident Frames  : [ 65157747032 65157747033 65157747034 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747030
+Decision         : REPLACE 65157747030 -> 65157747034
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #12
+============================================================
+Actual Real Page : 65157747035
+Next Prediction  : 65157747036
+Confidence       : 50.0%
+Recent Pages     : 65157747028 65157747029 65157747030 65157747031 65157747032 65157747033 65157747034 65157747035
+Resident Frames  : [ 65157747032 65157747033 65157747034 65157747035 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747031
+Decision         : REPLACE 65157747031 -> 65157747035
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #13
+============================================================
+Actual Real Page : 65157747036
+Next Prediction  : 65157747037
+Confidence       : 50.0%
+Recent Pages     : 65157747029 65157747030 65157747031 65157747032 65157747033 65157747034 65157747035 65157747036
+Resident Frames  : [ 65157747036 65157747033 65157747034 65157747035 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747032
+Decision         : REPLACE 65157747032 -> 65157747036
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #14
+============================================================
+Actual Real Page : 65157747037
+Next Prediction  : 65157747038
+Confidence       : 50.0%
+Recent Pages     : 65157747030 65157747031 65157747032 65157747033 65157747034 65157747035 65157747036 65157747037
+Resident Frames  : [ 65157747036 65157747037 65157747034 65157747035 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747033
+Decision         : REPLACE 65157747033 -> 65157747037
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #15
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747039
+Confidence       : 50.0%
+Recent Pages     : 65157747031 65157747032 65157747033 65157747034 65157747035 65157747036 65157747037 65157747038
+Resident Frames  : [ 65157747036 65157747037 65157747038 65157747035 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747034
+Decision         : REPLACE 65157747034 -> 65157747038
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #16
+============================================================
+Actual Real Page : 65157747039
+Next Prediction  : 65157747040
+Confidence       : 50.0%
+Recent Pages     : 65157747032 65157747033 65157747034 65157747035 65157747036 65157747037 65157747038 65157747039
+Resident Frames  : [ 65157747036 65157747037 65157747038 65157747039 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747035
+Decision         : REPLACE 65157747035 -> 65157747039
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #17
+============================================================
+Actual Real Page : 65157747040
+Next Prediction  : 65157747041
+Confidence       : 50.0%
+Recent Pages     : 65157747033 65157747034 65157747035 65157747036 65157747037 65157747038 65157747039 65157747040
+Resident Frames  : [ 65157747040 65157747037 65157747038 65157747039 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747036
+Decision         : REPLACE 65157747036 -> 65157747040
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #18
+============================================================
+Actual Real Page : 65157747041
+Next Prediction  : 65157747042
+Confidence       : 50.0%
+Recent Pages     : 65157747034 65157747035 65157747036 65157747037 65157747038 65157747039 65157747040 65157747041
+Resident Frames  : [ 65157747040 65157747041 65157747038 65157747039 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747037
+Decision         : REPLACE 65157747037 -> 65157747041
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #19
+============================================================
+Actual Real Page : 65157747042
+Next Prediction  : 65157747043
+Confidence       : 50.0%
+Recent Pages     : 65157747035 65157747036 65157747037 65157747038 65157747039 65157747040 65157747041 65157747042
+Resident Frames  : [ 65157747040 65157747041 65157747042 65157747039 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747038
+Decision         : REPLACE 65157747038 -> 65157747042
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #20
+============================================================
+Actual Real Page : 65157747043
+Next Prediction  : 65157747044
+Confidence       : 50.0%
+Recent Pages     : 65157747036 65157747037 65157747038 65157747039 65157747040 65157747041 65157747042 65157747043
+Resident Frames  : [ 65157747040 65157747041 65157747042 65157747043 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747039
+Decision         : REPLACE 65157747039 -> 65157747043
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #21
+============================================================
+Actual Real Page : 65157747044
+Next Prediction  : 65157747045
+Confidence       : 50.0%
+Recent Pages     : 65157747037 65157747038 65157747039 65157747040 65157747041 65157747042 65157747043 65157747044
+Resident Frames  : [ 65157747044 65157747041 65157747042 65157747043 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747040
+Decision         : REPLACE 65157747040 -> 65157747044
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #22
+============================================================
+Actual Real Page : 65157747045
+Next Prediction  : 65157747046
+Confidence       : 50.0%
+Recent Pages     : 65157747038 65157747039 65157747040 65157747041 65157747042 65157747043 65157747044 65157747045
+Resident Frames  : [ 65157747044 65157747045 65157747042 65157747043 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747041
+Decision         : REPLACE 65157747041 -> 65157747045
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #23
+============================================================
+Actual Real Page : 65157747046
+Next Prediction  : 65157747047
+Confidence       : 50.0%
+Recent Pages     : 65157747039 65157747040 65157747041 65157747042 65157747043 65157747044 65157747045 65157747046
+Resident Frames  : [ 65157747044 65157747045 65157747046 65157747043 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747042
+Decision         : REPLACE 65157747042 -> 65157747046
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #24
+============================================================
+Actual Real Page : 65157747047
+Next Prediction  : 65157747048
+Confidence       : 50.0%
+Recent Pages     : 65157747040 65157747041 65157747042 65157747043 65157747044 65157747045 65157747046 65157747047
+Resident Frames  : [ 65157747044 65157747045 65157747046 65157747047 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747043
+Decision         : REPLACE 65157747043 -> 65157747047
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #25
+============================================================
+Actual Real Page : 65157747048
+Next Prediction  : 65157747049
+Confidence       : 50.0%
+Recent Pages     : 65157747041 65157747042 65157747043 65157747044 65157747045 65157747046 65157747047 65157747048
+Resident Frames  : [ 65157747048 65157747045 65157747046 65157747047 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747044
+Decision         : REPLACE 65157747044 -> 65157747048
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #26
+============================================================
+Actual Real Page : 65157747049
+Next Prediction  : 65157747050
+Confidence       : 50.0%
+Recent Pages     : 65157747042 65157747043 65157747044 65157747045 65157747046 65157747047 65157747048 65157747049
+Resident Frames  : [ 65157747048 65157747049 65157747046 65157747047 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747045
+Decision         : REPLACE 65157747045 -> 65157747049
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #27
+============================================================
+Actual Real Page : 65157747050
+Next Prediction  : 65157747051
+Confidence       : 50.0%
+Recent Pages     : 65157747043 65157747044 65157747045 65157747046 65157747047 65157747048 65157747049 65157747050
+Resident Frames  : [ 65157747048 65157747049 65157747050 65157747047 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747046
+Decision         : REPLACE 65157747046 -> 65157747050
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #28
+============================================================
+Actual Real Page : 65157747051
+Next Prediction  : 65157747052
+Confidence       : 50.0%
+Recent Pages     : 65157747044 65157747045 65157747046 65157747047 65157747048 65157747049 65157747050 65157747051
+Resident Frames  : [ 65157747048 65157747049 65157747050 65157747051 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747047
+Decision         : REPLACE 65157747047 -> 65157747051
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #29
+============================================================
+Actual Real Page : 65157747052
+Next Prediction  : 65157747053
+Confidence       : 50.0%
+Recent Pages     : 65157747045 65157747046 65157747047 65157747048 65157747049 65157747050 65157747051 65157747052
+Resident Frames  : [ 65157747052 65157747049 65157747050 65157747051 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747048
+Decision         : REPLACE 65157747048 -> 65157747052
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #30
+============================================================
+Actual Real Page : 65157747053
+Next Prediction  : 65157747054
+Confidence       : 50.0%
+Recent Pages     : 65157747046 65157747047 65157747048 65157747049 65157747050 65157747051 65157747052 65157747053
+Resident Frames  : [ 65157747052 65157747053 65157747050 65157747051 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747049
+Decision         : REPLACE 65157747049 -> 65157747053
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #31
+============================================================
+Actual Real Page : 65157747054
+Next Prediction  : 65157747055
+Confidence       : 50.0%
+Recent Pages     : 65157747047 65157747048 65157747049 65157747050 65157747051 65157747052 65157747053 65157747054
+Resident Frames  : [ 65157747052 65157747053 65157747054 65157747051 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747050
+Decision         : REPLACE 65157747050 -> 65157747054
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #32
+============================================================
+Actual Real Page : 65157747055
+Next Prediction  : 65157747056
+Confidence       : 50.0%
+Recent Pages     : 65157747048 65157747049 65157747050 65157747051 65157747052 65157747053 65157747054 65157747055
+Resident Frames  : [ 65157747052 65157747053 65157747054 65157747055 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747051
+Decision         : REPLACE 65157747051 -> 65157747055
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #33
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747032
+Confidence       : 99.0%
+Recent Pages     : 65157747049 65157747050 65157747051 65157747052 65157747053 65157747054 65157747055 65157747031
+Resident Frames  : [ 65157747031 65157747053 65157747054 65157747055 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747052
+Decision         : REPLACE 65157747052 -> 65157747031
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #34
+============================================================
+Actual Real Page : 65157747025
+Next Prediction  : 65157747026
+Confidence       : 99.0%
+Recent Pages     : 65157747050 65157747051 65157747052 65157747053 65157747054 65157747055 65157747031 65157747025
+Resident Frames  : [ 65157747031 65157747025 65157747054 65157747055 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747053
+Decision         : REPLACE 65157747053 -> 65157747025
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #35
+============================================================
+Actual Real Page : 65157747026
+Next Prediction  : 65157747027
+Confidence       : 99.0%
+Recent Pages     : 65157747051 65157747052 65157747053 65157747054 65157747055 65157747031 65157747025 65157747026
+Resident Frames  : [ 65157747031 65157747025 65157747026 65157747055 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747054
+Decision         : REPLACE 65157747054 -> 65157747026
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #36
+============================================================
+Actual Real Page : 65157747027
+Next Prediction  : 65157747028
+Confidence       : 99.0%
+Recent Pages     : 65157747052 65157747053 65157747054 65157747055 65157747031 65157747025 65157747026 65157747027
+Resident Frames  : [ 65157747031 65157747025 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747055
+Decision         : REPLACE 65157747055 -> 65157747027
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #37
+============================================================
+Actual Real Page : 65157747028
+Next Prediction  : 65157747029
+Confidence       : 99.0%
+Recent Pages     : 65157747053 65157747054 65157747055 65157747031 65157747025 65157747026 65157747027 65157747028
+Resident Frames  : [ 65157747028 65157747025 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747031
+Decision         : REPLACE 65157747031 -> 65157747028
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #38
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747039
+Confidence       : 99.0%
+Recent Pages     : 65157747054 65157747055 65157747031 65157747025 65157747026 65157747027 65157747028 65157747038
+Resident Frames  : [ 65157747028 65157747038 65157747026 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747025
+Decision         : REPLACE 65157747025 -> 65157747038
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #39
+============================================================
+Actual Real Page : 65157747030
+Next Prediction  : 65157747031
+Confidence       : 99.0%
+Recent Pages     : 65157747055 65157747031 65157747025 65157747026 65157747027 65157747028 65157747038 65157747030
+Resident Frames  : [ 65157747028 65157747038 65157747030 65157747027 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747026
+Decision         : REPLACE 65157747026 -> 65157747030
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #40
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747025
+Confidence       : 50.0%
+Recent Pages     : 65157747031 65157747025 65157747026 65157747027 65157747028 65157747038 65157747030 65157747031
+Resident Frames  : [ 65157747028 65157747038 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747027
+Decision         : REPLACE 65157747027 -> 65157747031
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #41
+============================================================
+Actual Real Page : 65157747032
+Next Prediction  : 65157747033
+Confidence       : 99.0%
+Recent Pages     : 65157747025 65157747026 65157747027 65157747028 65157747038 65157747030 65157747031 65157747032
+Resident Frames  : [ 65157747032 65157747038 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747028
+Decision         : REPLACE 65157747028 -> 65157747032
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #42
+============================================================
+Actual Real Page : 65157747033
+Next Prediction  : 65157747034
+Confidence       : 99.0%
+Recent Pages     : 65157747026 65157747027 65157747028 65157747038 65157747030 65157747031 65157747032 65157747033
+Resident Frames  : [ 65157747032 65157747033 65157747030 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747038
+Decision         : REPLACE 65157747038 -> 65157747033
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #43
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747039
+Confidence       : 50.0%
+Recent Pages     : 65157747027 65157747028 65157747038 65157747030 65157747031 65157747032 65157747033 65157747038
+Resident Frames  : [ 65157747032 65157747033 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747030
+Decision         : REPLACE 65157747030 -> 65157747038
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #44
+============================================================
+Actual Real Page : 65157747035
+Next Prediction  : 65157747036
+Confidence       : 99.0%
+Recent Pages     : 65157747028 65157747038 65157747030 65157747031 65157747032 65157747033 65157747038 65157747035
+Resident Frames  : [ 65157747035 65157747033 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747032
+Decision         : REPLACE 65157747032 -> 65157747035
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #45
+============================================================
+Actual Real Page : 65157747036
+Next Prediction  : 65157747037
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747030 65157747031 65157747032 65157747033 65157747038 65157747035 65157747036
+Resident Frames  : [ 65157747035 65157747036 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747033
+Decision         : REPLACE 65157747033 -> 65157747036
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #46
+============================================================
+Actual Real Page : 65157747037
+Next Prediction  : 65157747038
+Confidence       : 99.0%
+Recent Pages     : 65157747030 65157747031 65157747032 65157747033 65157747038 65157747035 65157747036 65157747037
+Resident Frames  : [ 65157747037 65157747036 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747035
+Decision         : REPLACE 65157747035 -> 65157747037
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #47
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747039
+Confidence       : 33.3%
+Recent Pages     : 65157747031 65157747032 65157747033 65157747038 65157747035 65157747036 65157747037 65157747038
+Resident Frames  : [ 65157747037 65157747036 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #48
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747039
+Confidence       : 33.3%
+Recent Pages     : 65157747032 65157747033 65157747038 65157747035 65157747036 65157747037 65157747038 65157747038
+Resident Frames  : [ 65157747037 65157747036 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #49
+============================================================
+Actual Real Page : 65157747040
+Next Prediction  : 65157747041
+Confidence       : 99.0%
+Recent Pages     : 65157747033 65157747038 65157747035 65157747036 65157747037 65157747038 65157747038 65157747040
+Resident Frames  : [ 65157747037 65157747040 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747036
+Decision         : REPLACE 65157747036 -> 65157747040
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #50
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747032
+Confidence       : 66.7%
+Recent Pages     : 65157747038 65157747035 65157747036 65157747037 65157747038 65157747038 65157747040 65157747031
+Resident Frames  : [ 65157747037 65157747040 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #51
+============================================================
+Actual Real Page : 65157747042
+Next Prediction  : 65157747043
+Confidence       : 99.0%
+Recent Pages     : 65157747035 65157747036 65157747037 65157747038 65157747038 65157747040 65157747031 65157747042
+Resident Frames  : [ 65157747042 65157747040 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747037
+Decision         : REPLACE 65157747037 -> 65157747042
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #52
+============================================================
+Actual Real Page : 65157747043
+Next Prediction  : 65157747044
+Confidence       : 99.0%
+Recent Pages     : 65157747036 65157747037 65157747038 65157747038 65157747040 65157747031 65157747042 65157747043
+Resident Frames  : [ 65157747042 65157747043 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747040
+Decision         : REPLACE 65157747040 -> 65157747043
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #53
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747040
+Confidence       : 25.0%
+Recent Pages     : 65157747037 65157747038 65157747038 65157747040 65157747031 65157747042 65157747043 65157747038
+Resident Frames  : [ 65157747042 65157747043 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #54
+============================================================
+Actual Real Page : 65157747045
+Next Prediction  : 65157747046
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747038 65157747040 65157747031 65157747042 65157747043 65157747038 65157747045
+Resident Frames  : [ 65157747045 65157747043 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747042
+Decision         : REPLACE 65157747042 -> 65157747045
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #55
+============================================================
+Actual Real Page : 65157747046
+Next Prediction  : 65157747047
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747040 65157747031 65157747042 65157747043 65157747038 65157747045 65157747046
+Resident Frames  : [ 65157747045 65157747046 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747043
+Decision         : REPLACE 65157747043 -> 65157747046
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #56
+============================================================
+Actual Real Page : 65157747047
+Next Prediction  : 65157747048
+Confidence       : 99.0%
+Recent Pages     : 65157747040 65157747031 65157747042 65157747043 65157747038 65157747045 65157747046 65157747047
+Resident Frames  : [ 65157747047 65157747046 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747045
+Decision         : REPLACE 65157747045 -> 65157747047
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #57
+============================================================
+Actual Real Page : 65157747048
+Next Prediction  : 65157747049
+Confidence       : 99.0%
+Recent Pages     : 65157747031 65157747042 65157747043 65157747038 65157747045 65157747046 65157747047 65157747048
+Resident Frames  : [ 65157747047 65157747048 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747046
+Decision         : REPLACE 65157747046 -> 65157747048
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #58
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747040
+Confidence       : 20.0%
+Recent Pages     : 65157747042 65157747043 65157747038 65157747045 65157747046 65157747047 65157747048 65157747038
+Resident Frames  : [ 65157747047 65157747048 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #59
+============================================================
+Actual Real Page : 65157747050
+Next Prediction  : 65157747051
+Confidence       : 99.0%
+Recent Pages     : 65157747043 65157747038 65157747045 65157747046 65157747047 65157747048 65157747038 65157747050
+Resident Frames  : [ 65157747050 65157747048 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747047
+Decision         : REPLACE 65157747047 -> 65157747050
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #60
+============================================================
+Actual Real Page : 65157747051
+Next Prediction  : 65157747052
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747045 65157747046 65157747047 65157747048 65157747038 65157747050 65157747051
+Resident Frames  : [ 65157747050 65157747051 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747048
+Decision         : REPLACE 65157747048 -> 65157747051
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #61
+============================================================
+Actual Real Page : 65157747052
+Next Prediction  : 65157747053
+Confidence       : 99.0%
+Recent Pages     : 65157747045 65157747046 65157747047 65157747048 65157747038 65157747050 65157747051 65157747052
+Resident Frames  : [ 65157747052 65157747051 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747050
+Decision         : REPLACE 65157747050 -> 65157747052
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #62
+============================================================
+Actual Real Page : 65157747053
+Next Prediction  : 65157747054
+Confidence       : 99.0%
+Recent Pages     : 65157747046 65157747047 65157747048 65157747038 65157747050 65157747051 65157747052 65157747053
+Resident Frames  : [ 65157747052 65157747053 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747051
+Decision         : REPLACE 65157747051 -> 65157747053
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #63
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747040
+Confidence       : 16.7%
+Recent Pages     : 65157747047 65157747048 65157747038 65157747050 65157747051 65157747052 65157747053 65157747038
+Resident Frames  : [ 65157747052 65157747053 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #64
+============================================================
+Actual Real Page : 65157747055
+Next Prediction  : 65157747031
+Confidence       : 99.0%
+Recent Pages     : 65157747048 65157747038 65157747050 65157747051 65157747052 65157747053 65157747038 65157747055
+Resident Frames  : [ 65157747055 65157747053 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747052
+Decision         : REPLACE 65157747052 -> 65157747055
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #65
+============================================================
+Actual Real Page : 65157747024
+Next Prediction  : 65157747025
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747050 65157747051 65157747052 65157747053 65157747038 65157747055 65157747024
+Resident Frames  : [ 65157747055 65157747024 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747053
+Decision         : REPLACE 65157747053 -> 65157747024
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #66
+============================================================
+Actual Real Page : 65157747025
+Next Prediction  : 65157747026
+Confidence       : 99.0%
+Recent Pages     : 65157747050 65157747051 65157747052 65157747053 65157747038 65157747055 65157747024 65157747025
+Resident Frames  : [ 65157747025 65157747024 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747055
+Decision         : REPLACE 65157747055 -> 65157747025
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #67
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747032
+Confidence       : 50.0%
+Recent Pages     : 65157747051 65157747052 65157747053 65157747038 65157747055 65157747024 65157747025 65157747031
+Resident Frames  : [ 65157747025 65157747024 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #68
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747040
+Confidence       : 14.3%
+Recent Pages     : 65157747052 65157747053 65157747038 65157747055 65157747024 65157747025 65157747031 65157747038
+Resident Frames  : [ 65157747025 65157747024 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #69
+============================================================
+Actual Real Page : 65157747028
+Next Prediction  : 65157747029
+Confidence       : 50.0%
+Recent Pages     : 65157747053 65157747038 65157747055 65157747024 65157747025 65157747031 65157747038 65157747028
+Resident Frames  : [ 65157747025 65157747028 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747024
+Decision         : REPLACE 65157747024 -> 65157747028
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #70
+============================================================
+Actual Real Page : 65157747029
+Next Prediction  : 65157747030
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747055 65157747024 65157747025 65157747031 65157747038 65157747028 65157747029
+Resident Frames  : [ 65157747029 65157747028 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747025
+Decision         : REPLACE 65157747025 -> 65157747029
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #71
+============================================================
+Actual Real Page : 65157747030
+Next Prediction  : 65157747031
+Confidence       : 99.0%
+Recent Pages     : 65157747055 65157747024 65157747025 65157747031 65157747038 65157747028 65157747029 65157747030
+Resident Frames  : [ 65157747030 65157747028 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747029
+Decision         : REPLACE 65157747029 -> 65157747030
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #72
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : 65157747032
+Confidence       : 40.0%
+Recent Pages     : 65157747024 65157747025 65157747031 65157747038 65157747028 65157747029 65157747030 65157747031
+Resident Frames  : [ 65157747030 65157747028 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #73
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747040
+Confidence       : 12.5%
+Recent Pages     : 65157747025 65157747031 65157747038 65157747028 65157747029 65157747030 65157747031 65157747038
+Resident Frames  : [ 65157747030 65157747028 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #74
+============================================================
+Actual Real Page : 65157747033
+Next Prediction  : 65157747038
+Confidence       : 50.0%
+Recent Pages     : 65157747031 65157747038 65157747028 65157747029 65157747030 65157747031 65157747038 65157747033
+Resident Frames  : [ 65157747030 65157747033 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747028
+Decision         : REPLACE 65157747028 -> 65157747033
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #75
+============================================================
+Actual Real Page : 65157747034
+Next Prediction  : 65157747035
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747028 65157747029 65157747030 65157747031 65157747038 65157747033 65157747034
+Resident Frames  : [ 65157747034 65157747033 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747030
+Decision         : REPLACE 65157747030 -> 65157747034
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #76
+============================================================
+Actual Real Page : 65157747035
+Next Prediction  : 65157747036
+Confidence       : 99.0%
+Recent Pages     : 65157747028 65157747029 65157747030 65157747031 65157747038 65157747033 65157747034 65157747035
+Resident Frames  : [ 65157747035 65157747033 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747034
+Decision         : REPLACE 65157747034 -> 65157747035
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #77
+============================================================
+Actual Real Page : 65157747036
+Next Prediction  : 65157747037
+Confidence       : 99.0%
+Recent Pages     : 65157747029 65157747030 65157747031 65157747038 65157747033 65157747034 65157747035 65157747036
+Resident Frames  : [ 65157747035 65157747036 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747033
+Decision         : REPLACE 65157747033 -> 65157747036
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #78
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747033
+Confidence       : 11.1%
+Recent Pages     : 65157747030 65157747031 65157747038 65157747033 65157747034 65157747035 65157747036 65157747038
+Resident Frames  : [ 65157747035 65157747036 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #79
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : 65157747033
+Confidence       : 11.1%
+Recent Pages     : 65157747031 65157747038 65157747033 65157747034 65157747035 65157747036 65157747038 65157747038
+Resident Frames  : [ 65157747035 65157747036 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #80
+============================================================
+Actual Real Page : 65157747039
+Next Prediction  : 65157747040
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747033 65157747034 65157747035 65157747036 65157747038 65157747038 65157747039
+Resident Frames  : [ 65157747039 65157747036 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747035
+Decision         : REPLACE 65157747035 -> 65157747039
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #81
+============================================================
+Actual Real Page : 65157747040
+Next Prediction  : 65157747031
+Confidence       : 50.0%
+Recent Pages     : 65157747033 65157747034 65157747035 65157747036 65157747038 65157747038 65157747039 65157747040
+Resident Frames  : [ 65157747039 65157747040 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747036
+Decision         : REPLACE 65157747036 -> 65157747040
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #82
+============================================================
+Actual Real Page : 65157747041
+Next Prediction  : 65157747042
+Confidence       : 99.0%
+Recent Pages     : 65157747034 65157747035 65157747036 65157747038 65157747038 65157747039 65157747040 65157747041
+Resident Frames  : [ 65157747041 65157747040 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747039
+Decision         : REPLACE 65157747039 -> 65157747041
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #83
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747035 65157747036 65157747038 65157747038 65157747039 65157747040 65157747041 65157747038
+Resident Frames  : [ 65157747041 65157747040 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #84
+============================================================
+Actual Real Page : 65157747031
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747036 65157747038 65157747038 65157747039 65157747040 65157747041 65157747038 65157747031
+Resident Frames  : [ 65157747041 65157747040 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #85
+============================================================
+Actual Real Page : 65157747044
+Next Prediction  : 65157747045
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747038 65157747039 65157747040 65157747041 65157747038 65157747031 65157747044
+Resident Frames  : [ 65157747044 65157747040 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747041
+Decision         : REPLACE 65157747041 -> 65157747044
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #86
+============================================================
+Actual Real Page : 65157747045
+Next Prediction  : 65157747046
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747039 65157747040 65157747041 65157747038 65157747031 65157747044 65157747045
+Resident Frames  : [ 65157747044 65157747045 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747040
+Decision         : REPLACE 65157747040 -> 65157747045
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #87
+============================================================
+Actual Real Page : 65157747046
+Next Prediction  : 65157747047
+Confidence       : 99.0%
+Recent Pages     : 65157747039 65157747040 65157747041 65157747038 65157747031 65157747044 65157747045 65157747046
+Resident Frames  : [ 65157747046 65157747045 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747044
+Decision         : REPLACE 65157747044 -> 65157747046
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #88
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747040 65157747041 65157747038 65157747031 65157747044 65157747045 65157747046 65157747038
+Resident Frames  : [ 65157747046 65157747045 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #89
+============================================================
+Actual Real Page : 65157747048
+Next Prediction  : 65157747049
+Confidence       : 50.0%
+Recent Pages     : 65157747041 65157747038 65157747031 65157747044 65157747045 65157747046 65157747038 65157747048
+Resident Frames  : [ 65157747046 65157747048 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747045
+Decision         : REPLACE 65157747045 -> 65157747048
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #90
+============================================================
+Actual Real Page : 65157747049
+Next Prediction  : 65157747050
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747031 65157747044 65157747045 65157747046 65157747038 65157747048 65157747049
+Resident Frames  : [ 65157747049 65157747048 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747046
+Decision         : REPLACE 65157747046 -> 65157747049
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #91
+============================================================
+Actual Real Page : 65157747050
+Next Prediction  : 65157747051
+Confidence       : 99.0%
+Recent Pages     : 65157747031 65157747044 65157747045 65157747046 65157747038 65157747048 65157747049 65157747050
+Resident Frames  : [ 65157747050 65157747048 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747049
+Decision         : REPLACE 65157747049 -> 65157747050
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #92
+============================================================
+Actual Real Page : 65157747051
+Next Prediction  : 65157747052
+Confidence       : 99.0%
+Recent Pages     : 65157747044 65157747045 65157747046 65157747038 65157747048 65157747049 65157747050 65157747051
+Resident Frames  : [ 65157747050 65157747051 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747048
+Decision         : REPLACE 65157747048 -> 65157747051
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #93
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747045 65157747046 65157747038 65157747048 65157747049 65157747050 65157747051 65157747038
+Resident Frames  : [ 65157747050 65157747051 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #94
+============================================================
+Actual Real Page : 65157747053
+Next Prediction  : 65157747054
+Confidence       : 50.0%
+Recent Pages     : 65157747046 65157747038 65157747048 65157747049 65157747050 65157747051 65157747038 65157747053
+Resident Frames  : [ 65157747053 65157747051 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747050
+Decision         : REPLACE 65157747050 -> 65157747053
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #95
+============================================================
+Actual Real Page : 65157747054
+Next Prediction  : 65157747055
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747048 65157747049 65157747050 65157747051 65157747038 65157747053 65157747054
+Resident Frames  : [ 65157747053 65157747054 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747051
+Decision         : REPLACE 65157747051 -> 65157747054
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #96
+============================================================
+Actual Real Page : 65157747055
+Next Prediction  : 65157747031
+Confidence       : 50.0%
+Recent Pages     : 65157747048 65157747049 65157747050 65157747051 65157747038 65157747053 65157747054 65157747055
+Resident Frames  : [ 65157747053 65157747055 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747054
+Decision         : REPLACE 65157747054 -> 65157747055
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #97
+============================================================
+Actual Real Page : 65157747024
+Next Prediction  : 65157747025
+Confidence       : 99.0%
+Recent Pages     : 65157747049 65157747050 65157747051 65157747038 65157747053 65157747054 65157747055 65157747024
+Resident Frames  : [ 65157747024 65157747055 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747053
+Decision         : REPLACE 65157747053 -> 65157747024
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #98
+============================================================
+Actual Real Page : 65157747038
+Next Prediction  : learning...
+Confidence       : 0.0%
+Recent Pages     : 65157747050 65157747051 65157747038 65157747053 65157747054 65157747055 65157747024 65157747038
+Resident Frames  : [ 65157747024 65157747055 65157747038 65157747031 ]
+Hit/Fault        : HIT
+Victim Real Page : NONE
+Decision         : KEEP
+Reason           : Real page already resident
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #99
+============================================================
+Actual Real Page : 65157747026
+Next Prediction  : 65157747027
+Confidence       : 99.0%
+Recent Pages     : 65157747051 65157747038 65157747053 65157747054 65157747055 65157747024 65157747038 65157747026
+Resident Frames  : [ 65157747024 65157747026 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747055
+Decision         : REPLACE 65157747055 -> 65157747026
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage REAL MEMORY DECISION | Access #100
+============================================================
+Actual Real Page : 65157747027
+Next Prediction  : 65157747028
+Confidence       : 99.0%
+Recent Pages     : 65157747038 65157747053 65157747054 65157747055 65157747024 65157747038 65157747026 65157747027
+Resident Frames  : [ 65157747027 65157747026 65157747038 65157747031 ]
+Hit/Fault        : FAULT
+Victim Real Page : 65157747024
+Decision         : REPLACE 65157747024 -> 65157747027
+Reason           : AI selected lowest-future-usefulness page
+============================================================
+
+============================================================
+AIPage FINAL REAL MEMORY ANALYSIS
+============================================================
+Total Accesses        : 100
+Page Hits             : 17
+Page Faults           : 83
+Replacements          : 79
+Next-Page Predictions : 91
+Next-Page Correct     : 58
+Hit Rate              : 17.00%
+Fault Rate            : 83.00%
+Next-Page Accuracy    : 63.74%
+============================================================
+Real-memory AIPage demonstration complete.
+============================================================

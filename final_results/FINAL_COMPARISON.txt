@@ -1,0 +1,72 @@
+============================================================
+                 AIPage FINAL EXPERIMENT
+============================================================
+
+Experiment Type : Real-process memory access trace
+Trace           : real_pages_1032.txt
+Total Accesses  : 1032
+Virtual Frames  : 4
+
+============================================================
+                    PERFORMANCE
+============================================================
+
+Algorithm       Hits       Faults       Hit Rate
+------------------------------------------------------------
+AIPage          291        741          28.20%
+LRU             62         970           6.01%
+FIFO            59         973           5.72%
+
+============================================================
+                  AI PREDICTION
+============================================================
+
+Predictions Made       : 1018
+Correct Predictions    : 563
+Next-Page Accuracy     : 55.30%
+
+============================================================
+                  AIPage STATISTICS
+============================================================
+
+Page Hits              : 291
+Page Faults            : 741
+Replacements           : 737
+Hit Rate               : 28.20%
+Fault Rate             : 71.80%
+
+============================================================
+                    COMPARATIVE GAIN
+============================================================
+
+AIPage vs LRU:
+Hit-rate multiplier    : 4.69x
+Additional hits        : 229
+
+AIPage vs FIFO:
+Hit-rate multiplier    : 4.93x
+Additional hits        : 232
+
+============================================================
+                    INTERPRETATION
+============================================================
+
+AIPage achieved a 28.20% hit rate on the same 1032-access
+real-process memory trace using 4 virtual frames.
+
+The LRU baseline achieved 6.01% and FIFO achieved 5.72%.
+
+AIPage also achieved 55.30% next-page prediction accuracy.
+
+AIPage operates in user space using real-process memory-access
+telemetry and performs AI-guided virtual page-replacement
+simulation/decision making. It does not modify the Linux
+kernel's physical page-replacement mechanism.
+
+============================================================
+                     EXPERIMENT STATUS
+============================================================
+
+Status : FINAL VERIFIED RESULT
+
+============================================================

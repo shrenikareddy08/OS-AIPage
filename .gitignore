@@ -1,0 +1,46 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Backup / temporary source files
+*.backup
+*.bak
+*_backup.*
+*_BACKUP*
+*_BEFORE*
+*_before*
+*_FROZEN*
+*.old
+*.tmp
+*.before_*
+*.before*
+
+# Development backups
+gui/app.py.*
+gui/templates/index.html.*
+live/*.backup*
+src/*.backup*
+src/*.before*
+src/*_BEFORE*
+src/*_BACKUP*
+src/*_BROKEN*
+src/*_SAFE*
+src/*_WORKING*
+
+# Large / generated data
+training_data.csv
+training_data_v21.csv
+page_trace.txt
+
+# Runtime logs
+*.log
+
+# Git
+.git/

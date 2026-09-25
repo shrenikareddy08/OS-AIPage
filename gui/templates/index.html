@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AIPage</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    background:#050a12;
+    color:#e8eef7;
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:14px;
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(1450px,calc(100% - 40px));margin:auto}
+
+/* HEADER */
+header{
+    padding:26px 0 22px;
+    border-bottom:1px solid #1b2b3d;
+}
+.header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+.logo-title{
+    font-size:30px;
+    font-weight:850;
+    letter-spacing:-.7px;
+}
+.subtitle{
+    margin-top:5px;
+    color:#8196ad;
+    font-size:14px;
+}
+.live-badge{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 15px;
+    border:1px solid #176d4b;
+    border-radius:999px;
+    color:#52dc98;
+    background:#092018;
+    font-weight:750;
+}
+.live-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:#4ee094;
+    box-shadow:0 0 12px #4ee094;
+}
+
+/* GENERAL */
+section{scroll-margin-top:25px;margin-top:28px}
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:12px;
+}
+.section-title{font-size:19px;font-weight:800}
+.section-label{
+    color:#60758c;
+    font-size:10px;
+    letter-spacing:1.2px;
+    font-weight:800;
+}
+.card{
+    background:#091421;
+    border:1px solid #1c3045;
+    border-radius:14px;
+    padding:20px;
+}
+.card-title{
+    color:#9db1c7;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:14px;
+}
+.muted{color:#71859b}
+.small{font-size:11px}
+
+/* TOP METRICS */
+.metric-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+.metric{
+    background:#07101b;
+    border:1px solid #1a2d42;
+    border-radius:12px;
+    padding:17px;
+}
+.metric-label{
+    color:#687e95;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+.metric-value{
+    margin-top:8px;
+    font-size:24px;
+    font-weight:800;
+}
+.metric-sub{
+    margin-top:4px;
+    color:#5f7388;
+    font-size:10px;
+}
+
+/* MEMORY HERO */
+.memory-grid{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:14px;
+}
+.process-panel,.prediction-panel{
+    min-height:300px;
+}
+.process-identity{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:20px;
+}
+.process-icon{
+    width:52px;height:52px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:#0d2030;
+    border:1px solid #24445c;
+    font-size:21px;
+    font-weight:800;
+}
+.process-name{font-size:20px;font-weight:800}
+.process-pid{color:#64809a;margin-top:3px}
+.process-state{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 8px;
+    border-radius:6px;
+    background:#0a241b;
+    color:#50d995;
+    font-size:10px;
+    font-weight:800;
+}
+.process-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+.stat{
+    padding:11px;
+    background:#07101a;
+    border:1px solid #172a3d;
+    border-radius:9px;
+}
+.stat-label{
+    color:#61778e;
+    font-size:9px;
+    font-weight:800;
+}
+.stat-value{
+    margin-top:5px;
+    font-weight:750;
+}
+.prediction-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    align-items:center;
+}
+.page-box{
+    padding:20px;
+    background:#07101a;
+    border:1px solid #1b3145;
+    border-radius:12px;
+}
+.page-label{
+    color:#617990;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+.page-id{
+    margin-top:9px;
+    font-family:"SFMono-Regular",Consolas,monospace;
+    font-size:21px;
+    font-weight:800;
+    overflow-wrap:anywhere;
+}
+.predicted-box{border-color:#285873}
+.arrow-large{
+    text-align:center;
+    color:#4d83a4;
+    font-size:25px;
+    padding:6px;
+}
+.confidence-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:17px;
+    color:#8298ad;
+    font-size:11px;
+    font-weight:700;
+}
+.confidence-value{color:#e7eef7}
+.progress{
+    height:8px;
+    margin-top:7px;
+    background:#101f2e;
+    border-radius:99px;
+    overflow:hidden;
+}
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#4aa8df;
+    border-radius:99px;
+    transition:width .3s;
+}
+.reason-box{
+    margin-top:16px;
+    padding:12px;
+    border-left:3px solid #327ba4;
+    background:#07131e;
+    color:#a0b2c4;
+    border-radius:5px;
+}
+
+/* PAGE CHIPS */
+.access-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+.chip-area{
+    min-height:110px;
+    padding:15px;
+    background:#07101a;
+    border:1px solid #182c40;
+    border-radius:11px;
+}
+.chip-title{
+    color:#647b91;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:800;
+    margin-bottom:11px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.page-chip{
+    padding:6px 8px;
+    background:#0d1d2b;
+    border:1px solid #20394e;
+    border-radius:7px;
+    color:#a9c0d5;
+    font-family:monospace;
+    font-size:10px;
+}
+.frame-chip{
+    border-color:#265273;
+    color:#77b7dc;
+}
+
+/* DECISION */
+.decision-card{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+.decision-item{
+    padding:15px;
+    background:#07101a;
+    border:1px solid #182c40;
+    border-radius:10px;
+}
+.decision-label{
+    color:#627991;
+    font-size:9px;
+    letter-spacing:1px;
+    font-weight:800;
+}
+.decision-value{
+    margin-top:8px;
+    font-size:17px;
+    font-weight:800;
+    overflow-wrap:anywhere;
+}
+.reason-wide{
+    margin-top:12px;
+    padding:13px 15px;
+    background:#07101a;
+    border:1px solid #182c40;
+    border-radius:9px;
+    color:#9db0c2;
+}
+
+/* SCHEDULER */
+.scheduler-controls{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:end;
+    gap:12px;
+    margin-bottom:17px;
+}
+.control label{
+    display:block;
+    margin-bottom:6px;
+    color:#657b91;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.8px;
+}
+select,input{
+    background:#07101a;
+    color:#e6edf5;
+    border:1px solid #233b51;
+    border-radius:8px;
+    padding:9px 11px;
+    outline:none;
+}
+select:focus,input:focus{border-color:#3b779e}
+.primary-btn{
+    border:0;
+    border-radius:8px;
+    padding:10px 16px;
+    background:#237eaa;
+    color:white;
+    font-weight:800;
+}
+.primary-btn:hover{background:#2d91c1}
+.table-scroll{overflow-x:auto}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th{
+    color:#637a91;
+    font-size:9px;
+    letter-spacing:1px;
+    font-weight:800;
+    text-align:left;
+    padding:11px 10px;
+    border-bottom:1px solid #1d3044;
+    white-space:nowrap;
+}
+td{
+    padding:11px 10px;
+    border-bottom:1px solid #122436;
+    color:#a9b9c9;
+    white-space:nowrap;
+}
+tr:hover td{background:#07131f}
+.pid{
+    color:#6bb7e3;
+    font-family:monospace;
+    font-weight:750;
+}
+.state{font-size:10px;font-weight:800}
+.scheduler-note{
+    margin:0 0 13px;
+    color:#637a90;
+    font-size:11px;
+}
+.gantt-title{
+    margin-top:22px;
+    margin-bottom:9px;
+    color:#657b91;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:800;
+}
+.gantt-wrap{overflow-x:auto;padding-bottom:5px}
+.gantt-track,.gantt-times{
+    display:flex;
+    min-width:max-content;
+}
+.gantt-block{
+    height:44px;
+    min-width:65px;
+    display:grid;
+    place-items:center;
+    background:#0d3047;
+    border:1px solid #285975;
+    color:#b9d9ea;
+    font-family:monospace;
+    font-size:11px;
+}
+.gantt-time{
+    min-width:65px;
+    color:#61788f;
+    font-size:9px;
+    padding-top:5px;
+}
+
+/* LIVE PROCESSES */
+.live-process-card{margin-top:14px}
+.process-table td:nth-child(1){width:100px}
+.process-table td:nth-child(3){font-family:monospace}
+
+/* EXPERIMENTS */
+.experiment-summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:11px;
+    margin-bottom:15px;
+}
+.summary-box{
+    padding:15px;
+    background:#07101a;
+    border:1px solid #192e42;
+    border-radius:10px;
+}
+.summary-name{
+    color:#6d8297;
+    font-size:10px;
+    font-weight:800;
+}
+.summary-value{
+    margin-top:6px;
+    font-size:23px;
+    font-weight:800;
+}
+.ai-rate{color:#6dbbe5;font-weight:800}
+
+/* MODEL */
+.model-flow{
+    display:grid;
+    grid-template-columns:1fr 40px 1fr 40px 1fr;
+    align-items:center;
+    margin-bottom:18px;
+}
+.flow-box{
+    min-height:100px;
+    padding:17px;
+    background:#07101a;
+    border:1px solid #1b3145;
+    border-radius:10px;
+}
+.flow-title{font-weight:800}
+.flow-text{
+    margin-top:7px;
+    color:#71869b;
+    font-size:11px;
+    line-height:1.5;
+}
+.flow-arrow{text-align:center;color:#3e7597;font-size:22px}
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px;
+}
+.feature{
+    padding:12px;
+    border:1px solid #192d40;
+    background:#07101a;
+    border-radius:9px;
+    font-weight:750;
+    font-size:11px;
+}
+.feature span{
+    display:block;
+    margin-top:5px;
+    color:#62778c;
+    font-size:9px;
+    font-weight:500;
+    line-height:1.4;
+}
+
+/* NAV */
+.bottom-nav{
+    position:sticky;
+    bottom:12px;
+    z-index:20;
+    width:max-content;
+    max-width:calc(100% - 30px);
+    margin:30px auto 0;
+    display:flex;
+    gap:3px;
+    padding:5px;
+    background:#08131fdd;
+    backdrop-filter:blur(12px);
+    border:1px solid #20364a;
+    border-radius:11px;
+}
+.bottom-nav a{
+    color:#7890a6;
+    text-decoration:none;
+    padding:9px 13px;
+    border-radius:7px;
+    font-size:10px;
+    font-weight:750;
+}
+.bottom-nav a:hover{
+    background:#102333;
+    color:#b5d2e7;
+}
+footer{
+    text-align:center;
+    padding:22px 0 32px;
+    color:#43576b;
+    font-size:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+    .metric-grid{grid-template-columns:repeat(3,1fr)}
+    .memory-grid{grid-template-columns:1fr}
+    .feature-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:750px){
+    .container{width:min(100% - 22px,1450px)}
+    .header-row{align-items:flex-start}
+    .live-badge{font-size:10px}
+    .metric-grid{grid-template-columns:1fr 1fr}
+    .prediction-layout,.access-grid{grid-template-columns:1fr}
+    .decision-card{grid-template-columns:1fr 1fr}
+    .experiment-summary{grid-template-columns:1fr}
+    .model-flow{grid-template-columns:1fr}
+    .flow-arrow{transform:rotate(90deg);padding:4px}
+    .bottom-nav{
+        width:calc(100% - 20px);
+        overflow-x:auto;
+        justify-content:flex-start;
+    }
+    .bottom-nav a{white-space:nowrap}
+}
+
+.ossp-status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 18px;
+}
+
+.ossp-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 999px;
+    background: rgba(255,255,255,.035);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    white-space: nowrap;
+}
+
+.metric-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 700;
+}
+
+
+.architecture-section {
+    margin: 28px 0;
+}
+
+.architecture-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 16px 0;
+}
+
+.architecture-node {
+    min-width: 145px;
+    padding: 16px 14px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    background: rgba(255,255,255,.035);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.architecture-node strong {
+    font-size: 11px;
+    letter-spacing: .06em;
+}
+
+.architecture-node span {
+    font-size: 11px;
+    opacity: .65;
+}
+
+.architecture-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    opacity: .5;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   FINAL PAGE CHIP POLISH
+========================================================= */
+
+#recentAccesses,
+#residentFrames {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    gap: 8px !important;
+    width: 100%;
+    padding: 8px 0;
+    overflow-x: auto;
+}
+
+#recentAccesses .page-chip,
+#residentFrames .page-chip {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 11px !important;
+    margin: 0 !important;
+    border: 1px solid rgba(255,255,255,.15) !important;
+    border-radius: 8px !important;
+    background: rgba(255,255,255,.045) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    letter-spacing: .01em;
+}
+
+#residentFrames .frame-chip {
+    background: rgba(255,255,255,.065) !important;
+}
+
+
+.architecture-subtitle {
+    margin: 6px 0 16px;
+    opacity: .62;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+.scheduler-note {
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-left: 3px solid rgba(255,255,255,.35);
+    border-radius: 8px;
+    background: rgba(255,255,255,.035);
+    font-size: 11px;
+    line-height: 1.65;
+    opacity: .78;
+}
+
+.scheduler-note strong {
+    display: inline-block;
+    margin-right: 7px;
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   FINAL PAGE CHIP FIX
+========================================================= */
+
+#recentAccesses,
+#residentFrames {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 8px 0 !important;
+}
+
+#recentAccesses .page-chip,
+#residentFrames .page-chip {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 8px 11px !important;
+    margin: 0 !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    border-radius: 8px !important;
+    background: rgba(255,255,255,.045) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    letter-spacing: .01em !important;
+}
+
+#residentFrames .frame-chip {
+    background: rgba(255,255,255,.075) !important;
+}
+
+#recentAccesses .page-chip:hover,
+#residentFrames .page-chip:hover {
+    background: rgba(255,255,255,.10) !important;
+}
+
+</style>
+
+<style id="aipage-final-polish">
+
+/* =========================================================
+   AIPage FINAL 10/10 VISUAL POLISH
+   UI ONLY — NO BACKEND / C CHANGES
+========================================================= */
+
+:root {
+    --aipage-bg: #050a11;
+    --aipage-panel: #08131f;
+    --aipage-panel-2: #0b1825;
+    --aipage-border: rgba(120, 190, 235, .16);
+    --aipage-border-strong: rgba(70, 180, 240, .34);
+    --aipage-blue: #42b9f5;
+    --aipage-blue-soft: rgba(66, 185, 245, .12);
+    --aipage-green: #16e59a;
+    --aipage-green-soft: rgba(22, 229, 154, .11);
+    --aipage-text: #edf5fc;
+    --aipage-muted: #7890a6;
+}
+
+/* ---------- Global ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(40, 150, 220, .07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(20, 210, 160, .035),
+            transparent 28%
+        ),
+        var(--aipage-bg) !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.012) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.012) 1px,
+            transparent 1px
+        );
+    background-size: 32px 32px;
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.55),
+        transparent 85%
+    );
+    z-index: -1;
+}
+
+/* ---------- Cards ---------- */
+
+.card,
+.metric-card,
+.process-card,
+.decision-card,
+.access-box,
+.panel,
+.feature-card {
+    border-color: var(--aipage-border) !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11,24,37,.96),
+            rgba(6,15,25,.96)
+        ) !important;
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+
+.card,
+.metric-card,
+.process-card,
+.panel {
+    transition:
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.card:hover,
+.metric-card:hover,
+.process-card:hover,
+.panel:hover {
+    border-color: var(--aipage-border-strong) !important;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.25),
+        0 0 0 1px rgba(66,185,245,.035) !important;
+}
+
+/* ---------- Section headings ---------- */
+
+.section-heading {
+    margin-top: 34px !important;
+    margin-bottom: 14px !important;
+}
+
+.section-title {
+    color: var(--aipage-text) !important;
+    letter-spacing: .025em !important;
+    font-weight: 800 !important;
+}
+
+.section-label {
+    color: #66839b !important;
+    letter-spacing: .14em !important;
+}
+
+/* ---------- Metric strip ---------- */
+
+.metric-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--aipage-blue),
+        transparent
+    );
+    opacity: .7;
+}
+
+.metric-value {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.025em;
+}
+
+/* ---------- AI prediction engine ---------- */
+
+#currentPage,
+#predictedPage,
+#decisionCurrentPage,
+#victimPage {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .015em;
+}
+
+#currentPage,
+#predictedPage {
+    text-shadow:
+        0 0 22px rgba(66,185,245,.12);
+}
+
+#predictedPage {
+    color: #ccefff !important;
+}
+
+#confidenceBar {
+    background:
+        linear-gradient(
+            90deg,
+            #319dd8,
+            #57c9ff
+        ) !important;
+    box-shadow:
+        0 0 14px rgba(66,185,245,.28);
+}
+
+/* ---------- Live process ---------- */
+
+.process-status,
+.status-live,
+.live,
+.running {
+    box-shadow:
+        0 0 0 4px rgba(22,229,154,.055),
+        0 0 14px rgba(22,229,154,.18);
+}
+
+/* ---------- Page chips ---------- */
+
+#recentAccesses,
+#residentFrames {
+    min-height: 42px;
+}
+
+#recentAccesses .page-chip,
+#residentFrames .page-chip {
+    border-color: rgba(110,160,195,.20) !important;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.025)
+        ) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.035);
+    transition:
+        transform .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+}
+
+#recentAccesses .page-chip:hover,
+#residentFrames .page-chip:hover {
+    transform: translateY(-1px);
+    border-color: rgba(66,185,245,.42) !important;
+    background: var(--aipage-blue-soft) !important;
+}
+
+#residentFrames .frame-chip {
+    color: #65caff !important;
+    border-color: rgba(66,185,245,.25) !important;
+}
+
+/* ---------- Decision engine ---------- */
+
+.decision-card {
+    gap: 12px !important;
+}
+
+.decision-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.decision-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(66,185,245,.38),
+            transparent
+        );
+}
+
+#pageStatus,
+#decision {
+    font-weight: 900 !important;
+    letter-spacing: .045em;
+}
+
+#decision {
+    text-shadow:
+        0 0 18px rgba(66,185,245,.12);
+}
+
+#hitFault,
+#decisionReason {
+    color: #a8bdd0 !important;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+thead th {
+    background: rgba(255,255,255,.025) !important;
+    color: #7f9ab0 !important;
+    letter-spacing: .09em !important;
+}
+
+tbody tr {
+    transition: background .15s ease;
+}
+
+tbody tr:hover {
+    background: rgba(66,185,245,.035) !important;
+}
+
+/* ---------- Scheduler ---------- */
+
+.gantt,
+.gantt-chart,
+.schedule-chart {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.012)
+        ) !important;
+    border-color: var(--aipage-border) !important;
+}
+
+/* ---------- Feature cards ---------- */
+
+.feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(66,185,245,.35),
+            transparent
+        );
+}
+
+/* ---------- Navigation ---------- */
+
+.bottom-nav,
+.navbar,
+.navigation {
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    background: rgba(5,10,17,.82) !important;
+    border-color: rgba(100,160,200,.18) !important;
+    box-shadow:
+        0 -10px 35px rgba(0,0,0,.18);
+}
+
+/* ---------- Mono values ---------- */
+
+.mono {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Scrollbars ---------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.018);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(100,145,175,.28);
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(66,185,245,.42);
+}
+
+/* ---------- Mobile / laptop ---------- */
+
+@media (max-width: 900px) {
+
+    .section-heading {
+        margin-top: 25px !important;
+    }
+
+    .decision-card {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .decision-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    #recentAccesses .page-chip,
+    #residentFrames .page-chip {
+        font-size: 11px !important;
+    }
+}
+
+</style>
+
+
+<style id="aipage-10-10-final">
+
+/* =========================================================
+   AIPage FINAL VISUAL SYSTEM
+   ========================================================= */
+
+:root{
+    --ap-bg:#03070d;
+    --ap-surface:#07111c;
+    --ap-surface-2:#0a1623;
+    --ap-surface-3:#0d1b2a;
+    --ap-line:rgba(105,180,235,.16);
+    --ap-line-strong:rgba(70,180,240,.34);
+    --ap-blue:#43b8f2;
+    --ap-blue-soft:rgba(67,184,242,.10);
+    --ap-green:#18e39b;
+    --ap-green-soft:rgba(24,227,155,.10);
+    --ap-white:#eef6ff;
+    --ap-text:#d7e5f2;
+    --ap-muted:#7890a6;
+}
+
+/* PAGE */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(45,140,205,.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(20,100,160,.05),
+            transparent 28%
+        ),
+        var(--ap-bg) !important;
+
+    color:var(--ap-text) !important;
+}
+
+/* MAIN CONTAINER */
+
+main,
+.container,
+.dashboard,
+.page-container{
+    position:relative;
+}
+
+/* HEADINGS */
+
+h1{
+    letter-spacing:-.045em !important;
+    font-weight:800 !important;
+}
+
+h2{
+    letter-spacing:-.025em !important;
+    font-weight:800 !important;
+}
+
+h3{
+    letter-spacing:.01em !important;
+}
+
+/* SECTION TITLES */
+
+section > .section-title,
+.section-heading{
+    margin-bottom:18px !important;
+}
+
+/* CARDS */
+
+.card,
+.panel,
+.metric-card,
+.process-card,
+.prediction-card,
+.decision-card,
+.scheduler-card,
+.experiment-card,
+.model-card,
+.architecture-card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,24,38,.96),
+            rgba(5,14,23,.98)
+        ) !important;
+
+    border:1px solid var(--ap-line) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.025) !important;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease !important;
+}
+
+.card:hover,
+.panel:hover,
+.metric-card:hover{
+    border-color:var(--ap-line-strong) !important;
+
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.28),
+        0 0 0 1px rgba(67,184,242,.025) !important;
+}
+
+/* METRIC CARDS */
+
+.metric-card{
+    min-height:112px !important;
+    padding:22px !important;
+}
+
+.metric-card .value{
+    font-size:28px !important;
+    font-weight:800 !important;
+    letter-spacing:-.035em !important;
+}
+
+.metric-card .label{
+    letter-spacing:.14em !important;
+}
+
+/* LIVE INDICATOR */
+
+.status,
+.live-status,
+.system-status{
+    border:1px solid rgba(24,227,155,.35) !important;
+    background:rgba(24,227,155,.07) !important;
+    color:var(--ap-green) !important;
+    box-shadow:0 0 20px rgba(24,227,155,.07) !important;
+}
+
+/* AI MEMORY AREA */
+
+#simulation{
+    scroll-margin-top:80px;
+}
+
+#simulation .card,
+#simulation .panel{
+    border-color:rgba(67,184,242,.18) !important;
+}
+
+/* CURRENT / PREDICTED PAGE */
+
+#currentPage,
+#predictedPage,
+#decisionCurrentPage,
+#victimPage{
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace !important;
+
+    font-variant-numeric:tabular-nums;
+    letter-spacing:.015em !important;
+}
+
+/* PREDICTION EMPHASIS */
+
+#predictedPage{
+    color:var(--ap-blue) !important;
+}
+
+/* CONFIDENCE BAR */
+
+.progress,
+.progress-bar,
+.confidence-bar{
+    border-radius:999px !important;
+    overflow:hidden !important;
+}
+
+.progress-bar{
+    box-shadow:0 0 14px rgba(67,184,242,.22) !important;
+}
+
+/* PAGE CHIPS */
+
+#recentAccesses,
+#residentFrames{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:9px !important;
+    align-items:center !important;
+    padding:12px 0 !important;
+}
+
+#recentAccesses .page-chip,
+#residentFrames .page-chip{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    min-height:34px !important;
+    padding:7px 12px !important;
+
+    border-radius:9px !important;
+    border:1px solid rgba(130,180,215,.18) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.025)
+        ) !important;
+
+    color:#a9c7dc !important;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace !important;
+
+    font-size:12px !important;
+    font-weight:600 !important;
+    white-space:nowrap !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025) !important;
+
+    transition:
+        transform .16s ease,
+        border-color .16s ease,
+        background .16s ease !important;
+}
+
+#recentAccesses .page-chip:hover,
+#residentFrames .page-chip:hover{
+    transform:translateY(-1px);
+    border-color:rgba(67,184,242,.42) !important;
+    background:rgba(67,184,242,.08) !important;
+}
+
+#residentFrames .frame-chip{
+    color:var(--ap-blue) !important;
+    border-color:rgba(67,184,242,.24) !important;
+    background:rgba(67,184,242,.055) !important;
+}
+
+/* DECISION ENGINE */
+
+.decision-card{
+    display:grid !important;
+    grid-template-columns:
+        repeat(4,minmax(0,1fr)) !important;
+
+    gap:1px !important;
+
+    padding:0 !important;
+    overflow:hidden !important;
+
+    background:
+        rgba(100,160,200,.10) !important;
+}
+
+.decision-item{
+    padding:21px 20px !important;
+    background:rgba(7,17,28,.96) !important;
+}
+
+.decision-label{
+    color:#6f8ba3 !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.16em !important;
+}
+
+.decision-value{
+    margin-top:9px !important;
+    color:var(--ap-white) !important;
+    font-size:18px !important;
+    font-weight:800 !important;
+}
+
+#decision{
+    color:var(--ap-green) !important;
+}
+
+#pageStatus{
+    color:var(--ap-blue) !important;
+}
+
+/* REASON BOXES */
+
+.reason-wide{
+    margin-top:10px !important;
+    padding:15px 18px !important;
+
+    border:1px solid rgba(100,170,210,.12) !important;
+    border-radius:11px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(67,184,242,.045),
+            rgba(255,255,255,.015)
+        ) !important;
+}
+
+.reason-wide .page-label{
+    color:#6f8ba3 !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.15em !important;
+}
+
+/* PROCESS TABLE */
+
+table{
+    border-collapse:separate !important;
+    border-spacing:0 !important;
+}
+
+thead th{
+    color:#708aa0 !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.13em !important;
+    text-transform:uppercase !important;
+}
+
+tbody tr{
+    transition:background .15s ease !important;
+}
+
+tbody tr:hover{
+    background:rgba(67,184,242,.035) !important;
+}
+
+td{
+    border-bottom:1px solid rgba(120,170,205,.07) !important;
+}
+
+/* PROCESS STATE */
+
+.process-state,
+.state,
+.status-badge{
+    border-radius:999px !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.08em !important;
+}
+
+/* SCHEDULER */
+
+#scheduler{
+    scroll-margin-top:80px;
+}
+
+#scheduler select,
+#scheduler input,
+#scheduler button{
+    border-radius:9px !important;
+}
+
+#scheduler button{
+    font-weight:800 !important;
+    letter-spacing:.03em !important;
+    box-shadow:0 7px 20px rgba(0,0,0,.18) !important;
+}
+
+/* GANTT */
+
+.gantt,
+.gantt-chart{
+    border-radius:12px !important;
+    overflow:hidden !important;
+    border:1px solid rgba(100,170,210,.13) !important;
+    background:rgba(3,9,16,.72) !important;
+}
+
+/* EXPERIMENTS */
+
+#experiments{
+    scroll-margin-top:80px;
+}
+
+#experiments table{
+    width:100% !important;
+}
+
+#experiments tbody tr:nth-child(even){
+    background:rgba(255,255,255,.012) !important;
+}
+
+/* AI MODEL */
+
+#model{
+    scroll-margin-top:80px;
+}
+
+#model .feature-card,
+#model .model-feature,
+#model .feature{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,24,38,.90),
+            rgba(5,13,21,.96)
+        ) !important;
+
+    border:1px solid rgba(100,170,210,.13) !important;
+    border-radius:12px !important;
+}
+
+/* ARCHITECTURE */
+
+.architecture-flow{
+    align-items:stretch !important;
+}
+
+.architecture-node{
+    min-height:110px !important;
+    background:rgba(8,19,31,.9) !important;
+    border:1px solid rgba(67,184,242,.16) !important;
+    border-radius:13px !important;
+}
+
+.architecture-node:hover{
+    border-color:rgba(67,184,242,.38) !important;
+}
+
+/* BOTTOM NAVIGATION
+   Keep it below content instead of floating over headings.
+*/
+
+.bottom-nav,
+.navbar-bottom,
+#bottomNav{
+    position:sticky !important;
+    bottom:18px !important;
+    z-index:50 !important;
+
+    width:max-content !important;
+    max-width:calc(100% - 32px) !important;
+    margin:32px auto 20px !important;
+
+    border:1px solid rgba(90,170,220,.22) !important;
+    border-radius:15px !important;
+
+    background:
+        rgba(5,13,22,.90) !important;
+
+    backdrop-filter:blur(18px) !important;
+    -webkit-backdrop-filter:blur(18px) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.35) !important;
+}
+
+/* FOOTER */
+
+footer{
+    opacity:.65 !important;
+    padding-bottom:35px !important;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .decision-card{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    }
+
+    .metric-card{
+        min-height:100px !important;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .decision-card{
+        grid-template-columns:1fr 1fr !important;
+    }
+
+    .decision-item{
+        padding:15px !important;
+    }
+
+    #recentAccesses .page-chip,
+    #residentFrames .page-chip{
+        font-size:11px !important;
+    }
+
+}
+
+/* REMOVE ACCIDENTAL TEXT CLUTTER */
+
+#aipage-final-polish + *{
+    box-sizing:border-box;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+<header>
+    <div class="header-row">
+        <div>
+            <div class="logo-title">AIPage</div>
+            <div class="subtitle">Intelligent Memory &amp; Process Management</div>
+        </div>
+        <div class="live-badge">
+            <span class="live-dot"></span>
+            SYSTEM LIVE
+        </div>
+    </div>
+</header>
+
+
+<!-- =========================================================
+     LIVE SYSTEM OVERVIEW
+========================================================= -->
+
+<section id="monitor">
+
+    <div class="section-heading">
+        <div class="section-title">LIVE SYSTEM OVERVIEW</div>
+        <div class="section-label">REAL LINUX /PROC TELEMETRY</div>
+    </div>
+
+    <div class="metric-grid">
+
+        <div class="metric">
+            <div class="metric-label">EXPERIMENTAL CONFIGURATIONS</div>
+            <div class="metric-value" id="experimentConfigurations">28</div>
+            <div class="metric-sub">Loaded benchmark configurations</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">WORKLOADS</div>
+            <div class="metric-value">4</div>
+            <div class="metric-sub">Locality · Random · Sequential · Strided</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">FRAME RANGE</div>
+            <div class="metric-value">2–10</div>
+            <div class="metric-sub">Simulated physical frames</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">DATABASE SAMPLES</div>
+            <div class="metric-value" id="databaseSamples">--</div>
+            <div class="metric-sub">SQLite process telemetry</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">RAM USAGE</div>
+            <div class="metric-value" id="ramUsage">--</div>
+            <div class="metric-sub">System memory</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">RAM AVAILABLE</div>
+            <div class="metric-value" id="ramAvailable">--</div>
+            <div class="metric-sub">Available memory</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">CPU USAGE</div>
+            <div class="metric-value" id="cpuUsage">--</div>
+            <div class="metric-sub">System CPU</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">PAGE FAULTS</div>
+            <div class="metric-value" id="systemFaults">--</div>
+            <div class="metric-sub">AIPage simulation</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-label">PAGE ACCESSES</div>
+            <div class="metric-value" id="accessCount">--</div>
+            <div class="metric-sub">AIPage 1000-access benchmark</div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     LIVE AI MEMORY MANAGEMENT
+========================================================= -->
+
+<section id="simulation">
+
+    <div class="section-heading">
+        <div class="section-title">LIVE AI MEMORY MANAGEMENT</div>
+        <div class="section-label">AI-ASSISTED VIRTUAL MEMORY</div>
+    </div>
+
+    <div class="card" style="margin-bottom:14px">
+        <div class="card-title">REAL-MEMORY PIPELINE CONTROL</div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <button class="primary-btn" id="startLiveBtn" onclick="startLivePipeline()">▶ START LIVE PIPELINE</button>
+            <button class="secondary-btn" id="stopLiveBtn" onclick="stopLivePipeline()">■ STOP PIPELINE</button>
+            <span id="livePipelineStatus" class="status-badge">Checking pipeline...</span>
+        </div>
+    </div>
+
+    <div class="memory-grid">
+
+        <div class="card process-panel">
+
+            <div class="card-title">MONITORED LINUX PROCESS</div>
+
+            <div class="process-identity">
+                <div class="process-icon">P</div>
+                <div>
+                    <div class="process-name" id="mainProcessName">--</div>
+                    <div class="process-pid">
+                        PID <strong id="mainPid">--</strong>
+                    </div>
+                    <div class="process-state" id="mainState">--</div>
+                </div>
+            </div>
+
+            <div class="process-stats">
+
+                <div class="stat">
+                    <div class="stat-label">RSS</div>
+                    <div class="stat-value" id="mainRss">--</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">VIRTUAL MEMORY</div>
+                    <div class="stat-value" id="mainVm">--</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">MINOR FAULTS</div>
+                    <div class="stat-value" id="mainMinor">--</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">MAJOR FAULTS</div>
+                    <div class="stat-value" id="mainMajor">--</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card prediction-panel">
+
+            <div class="card-title">AI PAGE PREDICTION ENGINE</div>
+
+            <div class="prediction-layout">
+
+                <div class="page-box">
+                    <div class="page-label">CURRENT PAGE</div>
+                    <div class="page-id" id="currentPage">--</div>
+                </div>
+
+                <div class="page-box predicted-box">
+                    <div class="page-label">PREDICTED NEXT PAGE</div>
+                    <div class="page-id" id="predictedPage">--</div>
+                </div>
+
+            </div>
+
+            <div class="arrow-large">→</div>
+
+            <div class="confidence-row">
+                <span>PREDICTION CONFIDENCE</span>
+                <span class="confidence-value" id="confidence">0%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" id="confidenceBar"></div>
+            </div>
+
+            <div class="reason-box">
+                <div class="page-label">PREDICTION STATUS</div>
+                <div id="predictionReason" style="margin-top:6px">
+                    Waiting for AIPage
+                </div>
+            </div>
+
+            <div class="reason-box" style="margin-top:10px">
+                <div class="page-label">LAST PREDICTION RESULT</div>
+                <div id="predictionResult" style="margin-top:6px">
+                    Waiting for next real page
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="access-grid" style="margin-top:14px">
+
+        <div class="chip-area">
+            <div class="chip-title">RECENT PAGE ACCESSES</div>
+            <div class="chips" id="recentAccesses">
+                <span class="page-chip">--</span>
+            </div>
+        </div>
+
+        <div class="chip-area">
+            <div class="chip-title">RESIDENT FRAMES</div>
+            <div class="chips" id="residentFrames">
+                <span class="page-chip frame-chip">--</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AI DECISION
+========================================================= -->
+
+<section>
+
+    <div class="section-heading">
+        <div class="section-title">MEMORY MANAGEMENT DECISION</div>
+        <div class="section-label">AI DECISION ENGINE</div>
+    </div>
+
+    <div class="card">
+
+        <div class="decision-card">
+
+            <div class="decision-item">
+                <div class="decision-label">PAGE STATUS</div>
+                <div class="decision-value" id="pageStatus">WAITING</div>
+            </div>
+
+            <div class="decision-item">
+                <div class="decision-label">CURRENT PAGE</div>
+                <div class="decision-value mono" id="decisionCurrentPage">--</div>
+            </div>
+
+            <div class="decision-item">
+                <div class="decision-label">VICTIM PAGE</div>
+                <div class="decision-value mono" id="victimPage">--</div>
+            </div>
+
+            <div class="decision-item">
+                <div class="decision-label">AI ACTION</div>
+                <div class="decision-value" id="decision">WAITING</div>
+            </div>
+
+        </div>
+
+        <div class="reason-wide">
+            <span class="page-label">HIT / FAULT</span>
+            <div id="hitFault" style="margin-top:6px">
+                Waiting for AIPage
+            </div>
+        </div>
+
+        <div class="reason-wide">
+            <span class="page-label">DECISION REASON</span>
+            <div id="decisionReason" style="margin-top:6px">
+                Waiting for AIPage
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     LIVE PROCESS TELEMETRY
+========================================================= -->
+
+<section>
+
+    <div class="section-heading">
+        <div class="section-title">LIVE LINUX PROCESSES</div>
+        <div class="section-label">REAL /PROC PROCESS TELEMETRY</div>
+    </div>
+
+    <div class="card">
+
+        <div class="table-scroll">
+            <table class="process-table">
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>PROCESS</th>
+                        <th>CPU TIME</th>
+                        <th>STATE</th>
+                    </tr>
+                </thead>
+                <tbody id="liveProcessRows">
+                    <tr><td colspan="4">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PROCESS SCHEDULING
+========================================================= -->
+
+<section id="scheduler">
+
+    <div class="section-heading">
+        <div class="section-title">PROCESS SCHEDULING</div>
+        <div class="section-label">REAL LINUX PROCESSES → SCHEDULING SIMULATION</div>
+    </div>
+
+    <div class="card">
+
+        <div class="scheduler-controls">
+
+            <div class="control">
+                <label>NUMBER OF PROCESSES</label>
+                <input id="processCount" type="number" value="5" min="5" max="5" readonly>
+            </div>
+
+            <div class="control">
+                <label>ALGORITHM</label>
+                <select id="algorithm">
+                    <option value="ROUND ROBIN">ROUND ROBIN</option>
+                    <option value="FCFS">FCFS</option>
+                    <option value="SJF">SJF</option>
+                </select>
+            </div>
+
+            <div class="control" id="quantumControl">
+                <label>QUANTUM</label>
+                <input id="quantum" type="number" min="1" value="2">
+            </div>
+
+            <button class="primary-btn" onclick="runScheduler()">
+                ▶ RUN SCHEDULER
+            </button>
+
+        </div>
+
+
+
+        <div class="table-scroll">
+
+
+<div class="scheduler-note">
+    <strong>OSSP NOTE</strong>
+    PID, process name and CPU burst originate from live Linux /proc telemetry.
+    Linux does not expose textbook scheduler arrival times directly, so the
+    real process start order is normalized into a compact scheduling timeline.
+    CPU burst is measured Linux CPU execution time. These scheduling values
+    are
+    separate from AIPage page-memory telemetry.
+</div>
+
+<table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>PROCESS</th>
+                        <th>ARRIVAL*</th>
+                        <th>CPU BURST*</th>
+                    </tr>
+                </thead>
+
+                <tbody id="processInputs">
+                    <tr><td colspan="4">Loading Linux processes...</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="gantt-title">SCHEDULING RESULTS</div>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>CT</th>
+                        <th>TAT</th>
+                        <th>WT</th>
+                    </tr>
+                </thead>
+                <tbody id="schedulerResults"></tbody>
+            </table>
+        </div>
+
+        <div class="gantt-title">GANTT CHART</div>
+
+        <div class="gantt-wrap">
+            <div class="gantt-track" id="ganttTrack"></div>
+            <div class="gantt-times" id="ganttTimes"></div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     EXPERIMENTS
+========================================================= -->
+
+<section id="experiments">
+
+    <div class="section-heading">
+        <div class="section-title">EXPERIMENTS</div>
+        <div class="section-label">MEASURED AI / LRU / FIFO RESULTS</div>
+    </div>
+
+    <div class="card">
+
+        <div class="experiment-summary">
+
+            <div class="summary-box">
+                <div class="summary-name">AI PAGE HIT RATE</div>
+                <div class="summary-value ai-rate" id="summaryAI">--</div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-name">LRU HIT RATE</div>
+                <div class="summary-value" id="summaryLRU">--</div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-name">FIFO HIT RATE</div>
+                <div class="summary-value" id="summaryFIFO">--</div>
+            </div>
+
+        </div>
+
+        <div class="table-scroll">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>WORKLOAD</th>
+                        <th>FRAMES</th>
+                        <th>ACCESSES</th>
+                        <th>AI HIT RATE</th>
+                        <th>LRU HIT RATE</th>
+                        <th>FIFO HIT RATE</th>
+                    </tr>
+                </thead>
+                <tbody id="experimentRows">
+                    <tr><td colspan="6">Loading experiment results...</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ML MODEL
+========================================================= -->
+
+
+<section class="architecture-section">
+    <div class="section-kicker">SYSTEM ARCHITECTURE</div>
+    <h2>Linux Telemetry → AI Memory Management</h2>
+    <p class="architecture-subtitle">
+        Operating-system monitoring, process management and virtual-memory
+        decision flow implemented as an integrated research prototype.
+    </p>
+
+    <div class="architecture-flow">
+        <div class="architecture-node">
+            <strong>/proc</strong>
+            <span>Linux Telemetry</span>
+        </div>
+
+        <div class="architecture-arrow">→</div>
+
+        <div class="architecture-node">
+            <strong>MONITOR</strong>
+            <span>Process &amp; Page Access</span>
+        </div>
+
+        <div class="architecture-arrow">→</div>
+
+        <div class="architecture-node">
+            <strong>HISTORY</strong>
+            <span>Access Behaviour</span>
+        </div>
+
+        <div class="architecture-arrow">→</div>
+
+        <div class="architecture-node">
+            <strong>AI ENGINE</strong>
+            <span>Reuse Prediction</span>
+        </div>
+
+        <div class="architecture-arrow">→</div>
+
+        <div class="architecture-node">
+            <strong>MEMORY MANAGER</strong>
+            <span>Victim Selection</span>
+        </div>
+    </div>
+</section>
+
+<section id="model">
+
+    <div class="section-heading">
+        <div class="section-title">ML MODEL</div>
+        <div class="section-label">INTELLIGENT PAGE REUSE</div>
+    </div>
+
+    <div class="card">
+
+        <div class="model-flow">
+
+            <div class="flow-box">
+                <div class="flow-title">PAGE ACCESS HISTORY</div>
+                <div class="flow-text">
+                    Recent page references and reuse behavior are collected by AIPage.
+                </div>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <div class="flow-title">REUSE-BEHAVIOR SCORING ENGINE</div>
+                <div class="flow-text">
+                    Seven lightweight features describe page reuse behaviour and guide memory decisions.
+                </div>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <div class="flow-title">MEMORY DECISION</div>
+                <div class="flow-text">
+                    Pages with lower future reuse value are preferred as replacement victims.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                Frequency 10
+                <span>Recent access frequency</span>
+            </div>
+
+            <div class="feature">
+                Frequency 50
+                <span>Medium-window frequency</span>
+            </div>
+
+            <div class="feature">
+                Frequency 100
+                <span>Long-window frequency</span>
+            </div>
+
+            <div class="feature">
+                Recency
+                <span>Time since previous access</span>
+            </div>
+
+            <div class="feature">
+                Last Reuse Distance
+                <span>Distance from previous reuse</span>
+            </div>
+
+            <div class="feature">
+                Average Reuse Distance
+                <span>Historical reuse behavior</span>
+            </div>
+
+            <div class="feature">
+                Reuse Count
+                <span>Total observed reuses</span>
+            </div>
+
+            <div class="feature">
+                Reuse-Behavior Scoring
+                <span>Lightweight page-reuse decision engine</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<nav class="bottom-nav">
+    <a href="#scheduler">Process Scheduler</a>
+    <a href="#monitor">Live Monitor</a>
+    <a href="#simulation">AI Memory</a>
+    <a href="#experiments">Experiments</a>
+    <a href="#model">ML Model</a>
+</nav>
+
+<footer>
+    AIPage · Intelligent Memory &amp; Process Management · OSSP Research Prototype
+</footer>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function first(obj, keys, fallback="--"){
+    for(const key of keys){
+        if(obj && obj[key] !== undefined && obj[key] !== null)
+            return obj[key];
+    }
+    return fallback;
+}
+
+function formatPercent(value){
+    if(value === null || value === undefined || value === "")
+        return "--";
+
+    let n=Number(value);
+    if(!Number.isFinite(n)) return "--";
+    if(n <= 1) n*=100;
+    else if(n > 100 && n <= 10000) n/=100;
+
+    n=Math.max(0,Math.min(100,n));
+    return n.toFixed(2)+"%";
+}
+
+function formatMB(value){
+    if(value === null || value === undefined)
+        return "--";
+
+    const n=Number(value);
+    if(!Number.isFinite(n)) return "--";
+
+    return n.toFixed(1)+" MB";
+}
+
+function escapeHTML(value){
+    return String(value ?? "--")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+}
+
+
+/* =========================================================
+   REAL LINUX PROCESS DATA
+========================================================= */
+
+let linuxProcesses=[];
+
+async function updateProcesses(){
+
+    try{
+
+        const response=await fetch("/api/processes",{cache:"no-store"});
+        const data=await response.json();
+
+        const processes=Array.isArray(data.processes)
+            ? data.processes
+            : [];
+
+        linuxProcesses=processes;
+
+        renderLiveProcesses(processes);
+        renderSchedulerInputs(processes);
+
+    }catch(error){
+        console.log("Process telemetry:",error);
+    }
+}
+
+
+function renderLiveProcesses(processes){
+
+    const tbody=document.getElementById("liveProcessRows");
+
+    if(!processes.length){
+        tbody.innerHTML=
+            '<tr><td colspan="4">No live Linux process data</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML=processes.map(p=>`
+        <tr>
+            <td class="pid">${escapeHTML(p.pid)}</td>
+            <td>${escapeHTML(first(p,["process","name"]))}</td>
+            <td>${Number(first(p,["cpu_time"],0)).toFixed(2)} s</td>
+            <td class="state">${escapeHTML(first(p,["state"]))}</td>
+        </tr>
+    `).join("");
+}
+
+
+/* =========================================================
+   REAL-PROCESS SCHEDULER INPUT
+========================================================= */
+
+let processData=[];
+
+function buildSchedulerProcesses(processes){
+
+    const count = Math.min(
+        Number(document.getElementById("processCount").value) || 8,
+        processes.length
+    );
+
+    const selected = processes
+        .slice(0, count)
+        .map(p => ({
+            ...p,
+            realArrival: Number(p.arrival) || 0
+        }))
+        .sort((a,b) => a.realArrival - b.realArrival);
+
+    return selected.map((p, index) => {
+
+        const burst = Math.max(
+            0.01,
+            Number(p.cpu_time ?? p.burst ?? 0.01)
+        );
+
+        return {
+            pid: String(p.pid),
+            name: String(first(p, ["process","name"], "process")),
+
+            /*
+             * /proc provides process start information, but not
+             * textbook scheduler arrival times.
+             *
+             * Therefore we preserve the REAL Linux process order
+             * and map that order into a compact scheduling timeline.
+             */
+            at: index,
+
+            bt: Number(burst.toFixed(2))
+        };
+    });
+}
+
+
+function renderSchedulerInputs(processes){
+
+    processData=buildSchedulerProcesses(processes);
+
+    const tbody=document.getElementById("processInputs");
+
+    if(!processData.length){
+        tbody.innerHTML=
+            '<tr><td colspan="4">Waiting for Linux process telemetry...</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML=processData.map((p,index)=>`
+        <tr>
+            <td class="pid">P${index+1} · PID ${escapeHTML(p.pid)}</td>
+            <td>${escapeHTML(p.name)}</td>
+            <td>${p.at.toFixed(2)} s</td>
+            <td>${p.bt.toFixed(2)} s</td>
+        </tr>
+    `).join("");
+
+    runScheduler();
+}
+
+
+/* =========================================================
+   SCHEDULER
+========================================================= */
+
+function runScheduler(){
+
+    if(!processData.length) return;
+
+    const algorithm=document.getElementById("algorithm").value;
+
+    let schedule=[];
+
+    if(algorithm==="FCFS")
+        schedule=fcfs();
+    else if(algorithm==="SJF")
+        schedule=sjf();
+    else
+        schedule=roundRobin();
+
+    calculateResults(schedule);
+}
+
+
+function fcfs(){
+
+    const jobs=processData
+        .map(p=>({...p}))
+        .sort((a,b)=>a.at-b.at || a.pid.localeCompare(b.pid));
+
+    let time=0;
+    const schedule=[];
+
+    for(const p of jobs){
+
+        if(time<p.at){
+            schedule.push({
+                pid:"IDLE",
+                start:time,
+                end:p.at
+            });
+            time=p.at;
+        }
+
+        schedule.push({
+            pid:p.pid,
+            start:time,
+            end:time+p.bt
+        });
+
+        time+=p.bt;
+    }
+
+    return schedule;
+}
+
+
+function sjf(){
+
+    const jobs=processData.map(p=>({
+        ...p,
+        remaining:p.bt
+    }));
+
+    let time=0;
+    let completed=0;
+    const schedule=[];
+
+    while(completed<jobs.length){
+
+        const ready=jobs
+            .filter(p=>p.remaining>0 && p.at<=time)
+            .sort((a,b)=>
+                a.bt-b.bt ||
+                a.at-b.at ||
+                a.pid.localeCompare(b.pid)
+            );
+
+        if(!ready.length){
+
+            const future=jobs
+                .filter(p=>p.remaining>0)
+                .sort((a,b)=>a.at-b.at)[0];
+
+            if(!future) break;
+
+            schedule.push({
+                pid:"IDLE",
+                start:time,
+                end:future.at
+            });
+
+            time=future.at;
+            continue;
+        }
+
+        const p=ready[0];
+
+        schedule.push({
+            pid:p.pid,
+            start:time,
+            end:time+p.remaining
+        });
+
+        time+=p.remaining;
+        p.remaining=0;
+        completed++;
+    }
+
+    return schedule;
+}
+
+
+function roundRobin(){
+
+    const quantum=Math.max(
+        1,
+        Number(document.getElementById("quantum").value)||2
+    );
+
+    const jobs=processData
+        .map(p=>({...p,remaining:p.bt}))
+        .sort((a,b)=>a.at-b.at || a.pid.localeCompare(b.pid));
+
+    const queue=[];
+    const added=new Set();
+    let time=0;
+    let completed=0;
+    const schedule=[];
+
+    function addArrivals(){
+
+        jobs
+            .filter(p=>
+                p.at<=time &&
+                !added.has(p.pid) &&
+                p.remaining>0
+            )
+            .sort((a,b)=>
+                a.at-b.at ||
+                a.pid.localeCompare(b.pid)
+            )
+            .forEach(p=>{
+                queue.push(p);
+                added.add(p.pid);
+            });
+    }
+
+    while(completed<jobs.length){
+
+        addArrivals();
+
+        if(!queue.length){
+
+            const future=jobs
+                .filter(p=>p.remaining>0 && p.at>time)
+                .sort((a,b)=>a.at-b.at)[0];
+
+            if(!future) break;
+
+            schedule.push({
+                pid:"IDLE",
+                start:time,
+                end:future.at
+            });
+
+            time=future.at;
+            continue;
+        }
+
+        const p=queue.shift();
+
+        const run=Math.min(quantum,p.remaining);
+
+        schedule.push({
+            pid:p.pid,
+            start:time,
+            end:time+run
+        });
+
+        time+=run;
+        p.remaining-=run;
+
+        addArrivals();
+
+        if(p.remaining>0)
+            queue.push(p);
+        else
+            completed++;
+    }
+
+    return schedule;
+}
+
+
+function calculateResults(schedule){
+
+    const completion={};
+
+    schedule.forEach(block=>{
+        if(block.pid!=="IDLE")
+            completion[block.pid]=block.end;
+    });
+
+    const results=processData.map(p=>{
+
+        const ct=completion[p.pid];
+        const tat=ct-p.at;
+        const wt=tat-p.bt;
+
+        return {
+            pid:p.pid,
+            ct,
+            tat,
+            wt
+        };
+    });
+
+    document.getElementById("schedulerResults").innerHTML=
+        results.map(r=>`
+            <tr>
+                <td class="pid">${escapeHTML(r.pid)}</td>
+                <td class="metric-value">${r.ct.toFixed(2)}</td>
+                <td class="metric-value">${r.tat.toFixed(2)}</td>
+                <td class="metric-value">${r.wt.toFixed(2)}</td>
+            </tr>
+        `).join("");
+
+    renderGantt(schedule);
+}
+
+
+function renderGantt(schedule){
+
+    const track=document.getElementById("ganttTrack");
+    const times=document.getElementById("ganttTimes");
+
+    track.innerHTML="";
+    times.innerHTML="";
+
+    schedule.forEach(block=>{
+
+        const duration=Math.max(
+            0.1,
+            block.end-block.start
+        );
+
+        const width=Math.max(72,duration*38);
+
+        const div=document.createElement("div");
+        div.className="gantt-block";
+        div.style.width=width+"px";
+        div.textContent=block.pid;
+        track.appendChild(div);
+
+        const t=document.createElement("div");
+        t.className="gantt-time";
+        t.style.width=width+"px";
+        t.textContent=block.start.toFixed(1);
+        times.appendChild(t);
+    });
+
+    if(schedule.length){
+
+        const last=document.createElement("div");
+        last.className="gantt-time";
+        last.textContent=
+            schedule[schedule.length-1].end.toFixed(1);
+
+        times.appendChild(last);
+    }
+}
+
+
+
+
+function updateQuantumVisibility(){
+    const isRR=document.getElementById("algorithm").value === "ROUND ROBIN";
+    document.getElementById("quantumControl").style.display=isRR ? "block" : "none";
+}
+
+document.getElementById("algorithm")
+    .addEventListener("change",()=>{
+        updateQuantumVisibility();
+        runScheduler();
+    });
+
+updateQuantumVisibility();
+
+document.getElementById("quantum")
+    .addEventListener("change",runScheduler);
+
+
+async function updateDatabaseSamples(){
+    try{
+        const response=await fetch("/api/database",{cache:"no-store"});
+        const data=await response.json();
+        const el=document.getElementById("databaseSamples");
+        if(el) el.textContent=Number(data.samples||0).toLocaleString();
+    }catch(error){
+        console.log("Database telemetry:",error);
+    }
+}
+
+updateDatabaseSamples();
+setInterval(updateDatabaseSamples,3000);
+
+/* =========================================================
+   SYSTEM TELEMETRY
+========================================================= */
+
+async function updateSystem(){
+
+    try{
+
+        const response=await fetch(
+            "/api/system",
+            {cache:"no-store"}
+        );
+
+        const data=await response.json();
+        const proc=data.process||{};
+
+        document.getElementById("ramUsage").textContent=
+            formatPercent(data.memory_usage_percent);
+
+        document.getElementById("ramAvailable").textContent=
+            formatMB(
+                Number(data.memory_available_kb||0)/1024
+            );
+
+        document.getElementById("cpuUsage").textContent=
+            formatPercent(data.cpu_usage_percent);
+
+        document.getElementById("mainPid").textContent=
+            proc.pid ?? "--";
+
+        document.getElementById("mainProcessName").textContent=
+            proc.name ?? "--";
+
+        document.getElementById("mainState").textContent=
+            proc.state ?? "--";
+
+        document.getElementById("mainRss").textContent=
+            formatMB(
+                Number(proc.vm_rss_kb||0)/1024
+            );
+
+        document.getElementById("mainVm").textContent=
+            formatMB(
+                Number(proc.vm_size_kb||0)/1024
+            );
+
+        document.getElementById("mainMinor").textContent=
+            proc.minor_faults ?? "--";
+
+        document.getElementById("mainMajor").textContent=
+            proc.major_faults ?? "--";
+
+    }catch(error){
+        console.log("System telemetry:",error);
+    }
+}
+
+
+/* =========================================================
+   AI STATE
+========================================================= */
+
+async function updateAIState(){
+
+    try{
+
+        const response=await fetch(
+            "/api/state",
+            {cache:"no-store"}
+        );
+
+        const data=await response.json();
+
+        document.getElementById("systemFaults").textContent=
+            first(data,["page_faults"],"--");
+
+        document.getElementById("accessCount").textContent=
+            first(data,["access_count"],"--");
+
+        document.getElementById("currentPage").textContent=
+            first(data,["current_page"],"--");
+
+        document.getElementById("predictedPage").textContent=
+            first(data,["predicted_page"],"--");
+
+        const confidence=Number(
+            first(data,["confidence"],0)
+        );
+
+        document.getElementById("confidence").textContent=
+            formatPercent(confidence);
+
+        let confidenceNumber=confidence;
+
+        if(confidenceNumber<=1)
+            confidenceNumber*=100;
+        else if(confidenceNumber>100 && confidenceNumber<=10000)
+            confidenceNumber/=100;
+
+        confidenceNumber=Math.max(
+            0,
+            Math.min(100,confidenceNumber||0)
+        );
+
+        document.getElementById("confidenceBar").style.width=
+            confidenceNumber+"%";
+
+        document.getElementById("predictionReason").textContent=
+            first(
+                data,
+                ["prediction_reason","reason"],
+                "Waiting for AIPage"
+            );
+
+        const predictionResult =
+            document.getElementById("predictionResult");
+
+        const lastPrediction =
+            first(data,["last_prediction_result"],null);
+
+        if(lastPrediction && typeof lastPrediction === "object"){
+            predictionResult.textContent =
+                (lastPrediction.correct ? "✓ CORRECT" : "✗ INCORRECT") +
+                " · Predicted " + lastPrediction.predicted +
+                " → Actual " + lastPrediction.actual;
+        }else{
+            predictionResult.textContent =
+                "Waiting for next real page";
+        }
+
+        /* -------------------------------------------------
+           AIPage MEMORY DECISION STATE
+           HIT   -> KEEP
+           FAULT + free frame -> LOAD
+           FAULT + full frames -> REPLACE
+        ------------------------------------------------- */
+
+        const currentPage =
+            first(data,["current_page"],"--");
+
+        const victimPage =
+            first(data,["victim_page"],null);
+
+        const decision =
+            String(first(data,["decision"],"WAITING"));
+
+        const hitFault =
+            String(first(data,["hit_fault"],"--"));
+
+        const reason =
+            first(
+                data,
+                ["reason","prediction_reason"],
+                "Waiting for AIPage"
+            );
+
+        document.getElementById("decisionCurrentPage").textContent =
+            currentPage;
+
+        document.getElementById("victimPage").textContent =
+            victimPage === null || victimPage === "null"
+                ? "--"
+                : victimPage;
+
+        document.getElementById("decision").textContent =
+            decision;
+
+        document.getElementById("hitFault").textContent =
+            hitFault;
+
+        document.getElementById("decisionReason").textContent =
+            reason;
+
+        const statusEl =
+            document.getElementById("pageStatus");
+
+        if (decision === "KEEP" && hitFault === "HIT") {
+
+            statusEl.textContent = "RESIDENT";
+
+        } else if (decision === "LOAD" && hitFault === "FAULT") {
+
+            statusEl.textContent = "PAGE FAULT";
+
+        } else if (decision === "REPLACE" && hitFault === "FAULT") {
+
+            statusEl.textContent = "PAGE FAULT";
+
+        } else {
+
+            statusEl.textContent = "WAITING";
+        }
+
+
+        const recent=first(
+            data,
+            ["recent_accesses","recent_pages"],
+            []
+        );
+
+        const recentBox=
+            document.getElementById("recentAccesses");
+
+        if(Array.isArray(recent)&&recent.length){
+
+            recentBox.innerHTML=recent.map(page=>`
+                <span class="page-chip">
+                    ${escapeHTML(page)}
+                </span>
+            `).join("");
+
+        }else{
+            recentBox.innerHTML=
+                '<span class="page-chip">--</span>';
+        }
+
+
+        const frames=first(
+            data,
+            ["resident_frames"],
+            []
+        );
+
+        const frameBox=
+            document.getElementById("residentFrames");
+
+        if(Array.isArray(frames)&&frames.length){
+
+            frameBox.innerHTML=frames.map(page=>`
+                <span class="page-chip frame-chip">
+                    ${escapeHTML(page)}
+                </span>
+            `).join("");
+
+        }else{
+            frameBox.innerHTML=
+                '<span class="page-chip frame-chip">--</span>';
+        }
+
+    }catch(error){
+        console.log("AI state:",error);
+    }
+}
+
+
+/* =========================================================
+   EXPERIMENT RESULTS
+========================================================= */
+
+async function updateResults(){
+
+    try{
+
+        const response=await fetch(
+            "/api/results",
+            {cache:"no-store"}
+        );
+
+        const data=await response.json();
+
+        const rows=Array.isArray(data)
+            ? data
+            : first(
+                data,
+                ["results","data","experiments"],
+                []
+            );
+
+        const tbody=document.getElementById("experimentRows");
+
+        if(!Array.isArray(rows)||!rows.length){
+
+            tbody.innerHTML=
+                '<tr><td colspan="6">No experiment results available</td></tr>';
+
+            return;
+        }
+
+        tbody.innerHTML=rows.map(r=>{
+
+            const workload=first(
+                r,
+                ["workload","trace","name"],
+                "--"
+            );
+
+            const frames=first(
+                r,
+                ["frames","frame_count"],
+                "--"
+            );
+
+            const accesses=first(
+                r,
+                ["accesses","access_count"],
+                "--"
+            );
+
+            const ai=first(
+                r,
+                ["ai_hit_rate","AI Hit Rate","ai"],
+                null
+            );
+
+            const lru=first(
+                r,
+                ["lru_hit_rate","LRU Hit Rate","lru"],
+                null
+            );
+
+            const fifo=first(
+                r,
+                ["fifo_hit_rate","FIFO Hit Rate","fifo"],
+                null
+            );
+
+            return `
+                <tr>
+                    <td>${escapeHTML(workload)}</td>
+                    <td>${escapeHTML(frames)}</td>
+                    <td>${escapeHTML(accesses)}</td>
+                    <td class="ai-rate">${formatPercent(ai)}</td>
+                    <td>${formatPercent(lru)}</td>
+                    <td>${formatPercent(fifo)}</td>
+                </tr>
+            `;
+
+        }).join("");
+
+
+        /* Calculate displayed overall averages */
+
+        function average(keyOptions){
+
+            const values=rows
+                .map(r=>{
+                    const v=first(r,keyOptions,null);
+                    const n=Number(v);
+
+                    if(!Number.isFinite(n))
+                        return null;
+
+                    return n<=1?n*100:n;
+                })
+                .filter(v=>v!==null);
+
+            if(!values.length) return "--";
+
+            return (
+                values.reduce((a,b)=>a+b,0)/values.length
+            ).toFixed(1)+"%";
+        }
+
+        document.getElementById("summaryAI").textContent=
+            average(["ai_hit_rate","AI Hit Rate","ai"]);
+
+        document.getElementById("summaryLRU").textContent=
+            average(["lru_hit_rate","LRU Hit Rate","lru"]);
+
+        document.getElementById("summaryFIFO").textContent=
+            average(["fifo_hit_rate","FIFO Hit Rate","fifo"]);
+
+    }catch(error){
+        console.log("Experiment results:",error);
+    }
+}
+
+
+async function refreshLivePipelineStatus(){
+    try{
+        const r=await fetch("/api/live/status",{cache:"no-store"});
+        const d=await r.json();
+        const status=document.getElementById("livePipelineStatus");
+        const start=document.getElementById("startLiveBtn");
+        const stop=document.getElementById("stopLiveBtn");
+        if(d.running){
+            status.textContent="● Pipeline running · controller PID "+d.controller_pid;
+            start.disabled=true; stop.disabled=false;
+        }else{
+            status.textContent="● Pipeline stopped";
+            start.disabled=false; stop.disabled=true;
+        }
+    }catch(e){ console.log("Pipeline status:",e); }
+}
+
+async function startLivePipeline(){
+    await fetch("/api/live/start",{method:"POST"});
+    refreshLivePipelineStatus();
+}
+
+async function stopLivePipeline(){
+    await fetch("/api/live/stop",{method:"POST"});
+    refreshLivePipelineStatus();
+}
+
+refreshLivePipelineStatus();
+setInterval(refreshLivePipelineStatus,2000);
+
+/* =========================================================
+   START LIVE DASHBOARD
+========================================================= */
+
+updateSystem();
+updateProcesses();
+updateAIState();
+updateResults();
+
+setInterval(updateSystem,2000);
+setInterval(updateProcesses,2000);
+setInterval(updateAIState,1000);
+setInterval(updateResults,5000);
+
+</script>
+
+</body>
+</html>

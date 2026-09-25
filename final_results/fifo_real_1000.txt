@@ -1,0 +1,12 @@
+============================================================
+                FIFO REAL MEMORY BASELINE
+============================================================
+Trace       : final_results/real_pages_1000.txt
+Frames      : 4
+Accesses    : 1000
+Hits        : 56
+Page Faults : 944
+Replacements: 940
+Hit Rate    : 5.60%
+Fault Rate  : 94.40%
+============================================================

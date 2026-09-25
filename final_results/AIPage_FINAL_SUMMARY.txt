@@ -1,0 +1,49 @@
+============================================================
+AIPage FINAL EXPERIMENT SUMMARY
+============================================================
+
+LOCALITY
+Total Accesses       : 2776
+Page Hits            : 718
+Page Faults          : 2058
+Replacements         : 2054
+Predictions          : 2774
+Correct Predictions  : 186
+Hit Rate             : 25.86%
+Fault Rate           : 74.14%
+Prediction Accuracy  : 6.71%
+
+RANDOM
+Total Accesses       : 2522
+Page Hits            : 23
+Page Faults          : 2499
+Replacements         : 2495
+Predictions          : 2520
+Correct Predictions  : 8
+Hit Rate             : 0.91%
+Fault Rate           : 99.09%
+Prediction Accuracy  : 0.32%
+
+SEQUENTIAL
+Total Accesses       : 2021
+Page Hits            : 0
+Page Faults          : 2021
+Replacements         : 2017
+Predictions          : 2019
+Correct Predictions  : 0
+Hit Rate             : 0.00%
+Fault Rate           : 100.00%
+Prediction Accuracy  : 0.00%
+
+STRIDED
+Total Accesses       : 1017
+Page Hits            : 0
+Page Faults          : 1017
+Replacements         : 1013
+Predictions          : 1015
+Correct Predictions  : 0
+Hit Rate             : 0.00%
+Fault Rate           : 100.00%
+Prediction Accuracy  : 0.00%
+
+============================================================

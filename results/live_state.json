@@ -1,0 +1,23 @@
+{
+  "running": false,
+  "access_count": 1032,
+  "current_page": 60262391095,
+  "predicted_page": 60262391096,
+  "confidence": 25.93,
+  "recent_pages": [60262391088, 60262391089, 60262391090, 60262391102, 60262391092, 60262391093, 60262391094, 60262391095],
+  "resident_frames": [60262391094, 60262391093, 60262391102, 60262391095],
+  "hit_fault": "HIT",
+  "victim_page": null,
+  "decision": "KEEP",
+  "reason": "Real page already resident",
+  "page_hits": 291,
+  "page_faults": 741,
+  "replacements": 737,
+  "prediction_count": 1018,
+  "prediction_correct": 560,
+  "hit_rate": 28.20,
+  "fault_rate": 71.80,
+  "prediction_accuracy": 55.01,
+  "last_prediction_result": {"predicted": 60262391095, "actual": 60262391095, "correct": true},
+  "timestamp": 1790314365
+}
